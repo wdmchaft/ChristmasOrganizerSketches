@@ -1,0 +1,301 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F45BDEFF13A8EB930011F57D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45BDEFE13A8EB930011F57D /* UIKit.framework */; };
+		F45BDF0113A8EB930011F57D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45BDF0013A8EB930011F57D /* Foundation.framework */; };
+		F45BDF0313A8EB930011F57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45BDF0213A8EB930011F57D /* CoreGraphics.framework */; };
+		F45BDF0913A8EB930011F57D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F45BDF0713A8EB930011F57D /* InfoPlist.strings */; };
+		F45BDF0C13A8EB930011F57D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F45BDF0B13A8EB930011F57D /* main.m */; };
+		F45BDF0F13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F45BDF0E13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.m */; };
+		F45BDF1213A8EB930011F57D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45BDF1013A8EB930011F57D /* MainWindow.xib */; };
+		F45BDF1513A8EB930011F57D /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F45BDF1413A8EB930011F57D /* FirstViewController.m */; };
+		F45BDF1813A8EB930011F57D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F45BDF1713A8EB930011F57D /* SecondViewController.m */; };
+		F45BDF1B13A8EB930011F57D /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45BDF1913A8EB930011F57D /* FirstView.xib */; };
+		F45BDF1E13A8EB930011F57D /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45BDF1C13A8EB930011F57D /* SecondView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F45BDEFA13A8EB930011F57D /* ChristmasOrganizerSketches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChristmasOrganizerSketches.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F45BDEFE13A8EB930011F57D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F45BDF0013A8EB930011F57D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F45BDF0213A8EB930011F57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F45BDF0613A8EB930011F57D /* ChristmasOrganizerSketches-Info.plist */ = {isa = PBXFileReference; path = "ChristmasOrganizerSketches-Info.plist"; sourceTree = "<group>"; };
+		F45BDF0813A8EB930011F57D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F45BDF0A13A8EB930011F57D /* ChristmasOrganizerSketches-Prefix.pch */ = {isa = PBXFileReference; path = "ChristmasOrganizerSketches-Prefix.pch"; sourceTree = "<group>"; };
+		F45BDF0B13A8EB930011F57D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F45BDF0D13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.h */ = {isa = PBXFileReference; path = ChristmasOrganizerSketchesAppDelegate.h; sourceTree = "<group>"; };
+		F45BDF0E13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChristmasOrganizerSketchesAppDelegate.m; sourceTree = "<group>"; };
+		F45BDF1113A8EB930011F57D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		F45BDF1313A8EB930011F57D /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		F45BDF1413A8EB930011F57D /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		F45BDF1613A8EB930011F57D /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		F45BDF1713A8EB930011F57D /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		F45BDF1A13A8EB930011F57D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
+		F45BDF1D13A8EB930011F57D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F45BDEF713A8EB930011F57D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F45BDEFF13A8EB930011F57D /* UIKit.framework in Frameworks */,
+				F45BDF0113A8EB930011F57D /* Foundation.framework in Frameworks */,
+				F45BDF0313A8EB930011F57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F45BDEEF13A8EB930011F57D = {
+			isa = PBXGroup;
+			children = (
+				F45BDF0413A8EB930011F57D /* ChristmasOrganizerSketches */,
+				F45BDEFD13A8EB930011F57D /* Frameworks */,
+				F45BDEFB13A8EB930011F57D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F45BDEFB13A8EB930011F57D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F45BDEFA13A8EB930011F57D /* ChristmasOrganizerSketches.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F45BDEFD13A8EB930011F57D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F45BDEFE13A8EB930011F57D /* UIKit.framework */,
+				F45BDF0013A8EB930011F57D /* Foundation.framework */,
+				F45BDF0213A8EB930011F57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F45BDF0413A8EB930011F57D /* ChristmasOrganizerSketches */ = {
+			isa = PBXGroup;
+			children = (
+				F45BDF0D13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.h */,
+				F45BDF0E13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.m */,
+				F45BDF1013A8EB930011F57D /* MainWindow.xib */,
+				F45BDF1313A8EB930011F57D /* FirstViewController.h */,
+				F45BDF1413A8EB930011F57D /* FirstViewController.m */,
+				F45BDF1613A8EB930011F57D /* SecondViewController.h */,
+				F45BDF1713A8EB930011F57D /* SecondViewController.m */,
+				F45BDF1913A8EB930011F57D /* FirstView.xib */,
+				F45BDF1C13A8EB930011F57D /* SecondView.xib */,
+				F45BDF0513A8EB930011F57D /* Supporting Files */,
+			);
+			path = ChristmasOrganizerSketches;
+			sourceTree = "<group>";
+		};
+		F45BDF0513A8EB930011F57D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F45BDF0613A8EB930011F57D /* ChristmasOrganizerSketches-Info.plist */,
+				F45BDF0713A8EB930011F57D /* InfoPlist.strings */,
+				F45BDF0A13A8EB930011F57D /* ChristmasOrganizerSketches-Prefix.pch */,
+				F45BDF0B13A8EB930011F57D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F45BDEF913A8EB930011F57D /* ChristmasOrganizerSketches */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F45BDF2113A8EB930011F57D /* Build configuration list for PBXNativeTarget "ChristmasOrganizerSketches" */;
+			buildPhases = (
+				F45BDEF613A8EB930011F57D /* Sources */,
+				F45BDEF713A8EB930011F57D /* Frameworks */,
+				F45BDEF813A8EB930011F57D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChristmasOrganizerSketches;
+			productName = ChristmasOrganizerSketches;
+			productReference = F45BDEFA13A8EB930011F57D /* ChristmasOrganizerSketches.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F45BDEF113A8EB930011F57D /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = F45BDEF413A8EB930011F57D /* Build configuration list for PBXProject "ChristmasOrganizerSketches" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F45BDEEF13A8EB930011F57D;
+			productRefGroup = F45BDEFB13A8EB930011F57D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F45BDEF913A8EB930011F57D /* ChristmasOrganizerSketches */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F45BDEF813A8EB930011F57D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F45BDF0913A8EB930011F57D /* InfoPlist.strings in Resources */,
+				F45BDF1213A8EB930011F57D /* MainWindow.xib in Resources */,
+				F45BDF1B13A8EB930011F57D /* FirstView.xib in Resources */,
+				F45BDF1E13A8EB930011F57D /* SecondView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F45BDEF613A8EB930011F57D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F45BDF0C13A8EB930011F57D /* main.m in Sources */,
+				F45BDF0F13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.m in Sources */,
+				F45BDF1513A8EB930011F57D /* FirstViewController.m in Sources */,
+				F45BDF1813A8EB930011F57D /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F45BDF0713A8EB930011F57D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F45BDF0813A8EB930011F57D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F45BDF1013A8EB930011F57D /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F45BDF1113A8EB930011F57D /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		F45BDF1913A8EB930011F57D /* FirstView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F45BDF1A13A8EB930011F57D /* en */,
+			);
+			name = FirstView.xib;
+			sourceTree = "<group>";
+		};
+		F45BDF1C13A8EB930011F57D /* SecondView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F45BDF1D13A8EB930011F57D /* en */,
+			);
+			name = SecondView.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F45BDF1F13A8EB930011F57D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F45BDF2013A8EB930011F57D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		F45BDF2213A8EB930011F57D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChristmasOrganizerSketches/ChristmasOrganizerSketches-Prefix.pch";
+				INFOPLIST_FILE = "ChristmasOrganizerSketches/ChristmasOrganizerSketches-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F45BDF2313A8EB930011F57D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChristmasOrganizerSketches/ChristmasOrganizerSketches-Prefix.pch";
+				INFOPLIST_FILE = "ChristmasOrganizerSketches/ChristmasOrganizerSketches-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F45BDEF413A8EB930011F57D /* Build configuration list for PBXProject "ChristmasOrganizerSketches" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F45BDF1F13A8EB930011F57D /* Debug */,
+				F45BDF2013A8EB930011F57D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F45BDF2113A8EB930011F57D /* Build configuration list for PBXNativeTarget "ChristmasOrganizerSketches" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F45BDF2213A8EB930011F57D /* Debug */,
+				F45BDF2313A8EB930011F57D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F45BDEF113A8EB930011F57D /* Project object */;
+}
