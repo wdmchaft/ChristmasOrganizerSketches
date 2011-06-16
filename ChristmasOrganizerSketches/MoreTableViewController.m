@@ -1,15 +1,15 @@
 //
-//  PeopleTableViewController.m
+//  MoreTableViewController.m
 //  ChristmasOrganizerSketches
 //
 //  Created by Simon Meurer on 16.06.11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "PeopleTableViewController.h"
+#import "MoreTableViewController.h"
 
 
-@implementation PeopleTableViewController
+@implementation MoreTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,8 +40,6 @@
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStyleBordered target:self action:@selector(addButtonAction:)];
-    self.navigationItem.leftBarButtonItem = addButton;
 }
 
 - (void)viewDidUnload
@@ -88,7 +86,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 10;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -101,8 +99,23 @@
     }
     
     // Configure the cell...
-    
-    [cell.textLabel setText: [NSString stringWithFormat:@"Person %d", indexPath.row]];
+    switch (indexPath.row){
+        case 0:
+            [cell.textLabel setText: @"People without Gifts"];
+            break;
+        case 1:
+            [cell.textLabel setText: @"Gifts without Person"];
+            break;
+        case 2:
+            [cell.textLabel setText: @"Gifts with Person"];
+            break;
+        case 3:
+            [cell.textLabel setText: @"Gifts to buy"];
+            break;
+        case 4:
+            [cell.textLabel setText: @"Bought gifts"];
+            break;
+    }
     
     return cell;
 }

@@ -40,12 +40,8 @@
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-}
-
--(void) addButtonAction
-{
-    //TODO
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStyleBordered target:self action:@selector(addButtonAction:)];
+    self.navigationItem.leftBarButtonItem = addButton;
 }
 
 - (void)viewDidUnload
@@ -91,7 +87,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"Test!");
     if(tableView == self.tableView){
         return 10;
     }
@@ -164,6 +159,11 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+}
+
+-(void)addButtonAction
+{
+    
 }
 
 @end

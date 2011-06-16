@@ -13,10 +13,10 @@
 		F42CBD5D13A9FC0900C646AA /* PeopleTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F42CBD5B13A9FC0900C646AA /* PeopleTableViewController.xib */; };
 		F42CBD6113A9FDA500C646AA /* PeopleWithGiftsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F42CBD5F13A9FDA500C646AA /* PeopleWithGiftsTableViewController.m */; };
 		F42CBD6213A9FDA500C646AA /* PeopleWithGiftsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F42CBD6013A9FDA500C646AA /* PeopleWithGiftsTableViewController.xib */; };
-		F42CBD6B13A9FE7300C646AA /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F42CBD6913A9FE7300C646AA /* MoreViewController.m */; };
-		F42CBD6C13A9FE7300C646AA /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F42CBD6A13A9FE7300C646AA /* MoreViewController.xib */; };
 		F42CBD7013AA00AF00C646AA /* GiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F42CBD6E13AA00AF00C646AA /* GiftViewController.m */; };
 		F42CBD7113AA00AF00C646AA /* GiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F42CBD6F13AA00AF00C646AA /* GiftViewController.xib */; };
+		F42CBD7513AA49EE00C646AA /* MoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F42CBD7313AA49ED00C646AA /* MoreTableViewController.m */; };
+		F42CBD7613AA49EE00C646AA /* MoreTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F42CBD7413AA49ED00C646AA /* MoreTableViewController.xib */; };
 		F45BDEFF13A8EB930011F57D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45BDEFE13A8EB930011F57D /* UIKit.framework */; };
 		F45BDF0113A8EB930011F57D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45BDF0013A8EB930011F57D /* Foundation.framework */; };
 		F45BDF0313A8EB930011F57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45BDF0213A8EB930011F57D /* CoreGraphics.framework */; };
@@ -36,12 +36,12 @@
 		F42CBD5E13A9FDA500C646AA /* PeopleWithGiftsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleWithGiftsTableViewController.h; sourceTree = "<group>"; };
 		F42CBD5F13A9FDA500C646AA /* PeopleWithGiftsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleWithGiftsTableViewController.m; sourceTree = "<group>"; };
 		F42CBD6013A9FDA500C646AA /* PeopleWithGiftsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleWithGiftsTableViewController.xib; sourceTree = "<group>"; };
-		F42CBD6813A9FE7300C646AA /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoreViewController.h; path = ChristmasOrganizerSketches.xcodeproj/MoreViewController.h; sourceTree = SOURCE_ROOT; };
-		F42CBD6913A9FE7300C646AA /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoreViewController.m; path = ChristmasOrganizerSketches.xcodeproj/MoreViewController.m; sourceTree = SOURCE_ROOT; };
-		F42CBD6A13A9FE7300C646AA /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoreViewController.xib; path = ChristmasOrganizerSketches.xcodeproj/MoreViewController.xib; sourceTree = SOURCE_ROOT; };
 		F42CBD6D13AA00AF00C646AA /* GiftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftViewController.h; sourceTree = "<group>"; };
 		F42CBD6E13AA00AF00C646AA /* GiftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftViewController.m; sourceTree = "<group>"; };
 		F42CBD6F13AA00AF00C646AA /* GiftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftViewController.xib; sourceTree = "<group>"; };
+		F42CBD7213AA49ED00C646AA /* MoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreTableViewController.h; sourceTree = "<group>"; };
+		F42CBD7313AA49ED00C646AA /* MoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreTableViewController.m; sourceTree = "<group>"; };
+		F42CBD7413AA49ED00C646AA /* MoreTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreTableViewController.xib; sourceTree = "<group>"; };
 		F45BDEFA13A8EB930011F57D /* ChristmasOrganizerSketches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChristmasOrganizerSketches.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45BDEFE13A8EB930011F57D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F45BDF0013A8EB930011F57D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -111,12 +111,12 @@
 				F42CBD5E13A9FDA500C646AA /* PeopleWithGiftsTableViewController.h */,
 				F42CBD5F13A9FDA500C646AA /* PeopleWithGiftsTableViewController.m */,
 				F42CBD6013A9FDA500C646AA /* PeopleWithGiftsTableViewController.xib */,
-				F42CBD6813A9FE7300C646AA /* MoreViewController.h */,
-				F42CBD6913A9FE7300C646AA /* MoreViewController.m */,
-				F42CBD6A13A9FE7300C646AA /* MoreViewController.xib */,
 				F42CBD6D13AA00AF00C646AA /* GiftViewController.h */,
 				F42CBD6E13AA00AF00C646AA /* GiftViewController.m */,
 				F42CBD6F13AA00AF00C646AA /* GiftViewController.xib */,
+				F42CBD7213AA49ED00C646AA /* MoreTableViewController.h */,
+				F42CBD7313AA49ED00C646AA /* MoreTableViewController.m */,
+				F42CBD7413AA49ED00C646AA /* MoreTableViewController.xib */,
 				F45BDF0513A8EB930011F57D /* Supporting Files */,
 			);
 			path = ChristmasOrganizerSketches;
@@ -185,8 +185,8 @@
 				F42CBD5813A9FAE200C646AA /* GiftsTableViewController.xib in Resources */,
 				F42CBD5D13A9FC0900C646AA /* PeopleTableViewController.xib in Resources */,
 				F42CBD6213A9FDA500C646AA /* PeopleWithGiftsTableViewController.xib in Resources */,
-				F42CBD6C13A9FE7300C646AA /* MoreViewController.xib in Resources */,
 				F42CBD7113AA00AF00C646AA /* GiftViewController.xib in Resources */,
+				F42CBD7613AA49EE00C646AA /* MoreTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,8 +202,8 @@
 				F42CBD5713A9FAE200C646AA /* GiftsTableViewController.m in Sources */,
 				F42CBD5C13A9FC0900C646AA /* PeopleTableViewController.m in Sources */,
 				F42CBD6113A9FDA500C646AA /* PeopleWithGiftsTableViewController.m in Sources */,
-				F42CBD6B13A9FE7300C646AA /* MoreViewController.m in Sources */,
 				F42CBD7013AA00AF00C646AA /* GiftViewController.m in Sources */,
+				F42CBD7513AA49EE00C646AA /* MoreTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
