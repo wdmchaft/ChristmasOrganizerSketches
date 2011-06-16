@@ -11,8 +11,9 @@
 
 @interface GiftsTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>{
     
+    NSMutableArray *_gifts;
 }
 
--(void) addButtonAction;
+-(void) addButtonAction:(id)sender;
 
 @end

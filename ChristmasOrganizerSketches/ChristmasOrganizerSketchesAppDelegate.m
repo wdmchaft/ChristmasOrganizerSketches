@@ -7,23 +7,78 @@
 //
 
 #import "ChristmasOrganizerSketchesAppDelegate.h"
+#import "Gift.h"
 
 @implementation ChristmasOrganizerSketchesAppDelegate
 
 
 @synthesize giftsNavigationController = _giftsNavigationController;
 @synthesize window=_window;
+@synthesize gifts = _gifts;
 
 @synthesize tabBarController=_tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [self load];
     // Add the tab bar controller's current view as a subview of the window
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+#pragma mark - Load
+
+-(void) load
+{
+    NSLog(@"load");
+    [self loadGifts];
+}
+
+- (void)loadGifts
+{
+    NSLog(@"loadGifts");
+    
+    NSString* documentsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    
+    NSString *path = [documentsDir stringByAppendingPathComponent:@"gifts.plist"];
+    NSFileManager* fileManager = [NSFileManager defaultManager];
+    self.gifts = [[NSMutableArray alloc ] init];
+    if([fileManager fileExistsAtPath:path]){
+        NSArray *data = [NSArray arrayWithContentsOfFile:path];
+        for (NSDictionary *dict in data) {
+            [self.gifts addObject:[[Gift alloc] initWithDictionary:dict]];
+        }
+    }
+    else {
+        Gift *gift = [[Gift alloc] initWithName:@"iPod" place:@"Saturn" price:[NSNumber numberWithInt: 200] person:@""];
+        [_gifts addObject:gift];
+        [gift release];
+    }
+}
+
+#pragma mark - Save
+
+-(void)save
+{
+    NSLog(@"save");
+    [self saveGifts];
+}
+
+-(void)saveGifts
+{
+    NSLog(@"saveGifts");
+    
+    NSMutableArray *data = [NSMutableArray array];
+    for (Gift *gift in _gifts) {
+        [data addObject:[gift toDictionary]];
+    }
+    NSString* documentsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    [data writeToFile:[documentsDir stringByAppendingPathComponent:@"gifts.plist"] atomically:YES];
+
+}
+
+#pragma mark - Application Details
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -62,6 +117,7 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+    [self save];
 }
 
 - (void)dealloc
@@ -71,19 +127,5 @@
     [_giftsNavigationController release];
     [super dealloc];
 }
-
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
-}
-*/
-
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed
-{
-}
-*/
 
 @end

@@ -7,18 +7,11 @@
 //
 
 #import "GiftsTableViewController.h"
+#import "GiftViewController.h"
+#import "ChristmasOrganizerSketchesAppDelegate.h"
 
 
 @implementation GiftsTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)dealloc
 {
@@ -38,6 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _gifts = [((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) gifts];
     
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStyleBordered target:self action:@selector(addButtonAction:)];
@@ -88,7 +83,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(tableView == self.tableView){
-        return 10;
+        return [_gifts count];
     }
     return 0;
 }
@@ -103,7 +98,8 @@
     }
     
     // Configure the cell...
-    [cell.textLabel setText: [NSString stringWithFormat:@"Gift %d", indexPath.row]];
+    
+    [cell.textLabel setText: [[_gifts objectAtIndex:indexPath.row] name]];
     
     return cell;
 }
@@ -151,19 +147,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    GiftViewController *giftViewController = [[GiftViewController alloc] initWithGiftOrNil:[_gifts objectAtIndex:indexPath.row] nibNameOrNil:@"GiftViewController" bundleOrNil:nil];
+    [giftViewController setTitle:@"Edit Gift"];
+     [self.navigationController pushViewController:giftViewController animated:YES];
+     [giftViewController release];
 }
 
--(void)addButtonAction
+-(void)addButtonAction:(id)sender
 {
     
+    GiftViewController *giftViewController = [[GiftViewController alloc] initWithGiftOrNil:nil nibNameOrNil:@"GiftViewController" bundleOrNil:nil];
+    [giftViewController setTitle:@"Add Gift"];
+    [self.navigationController pushViewController:giftViewController animated:YES];
+    [giftViewController release];
 }
 
 @end

@@ -12,10 +12,16 @@
 
     UINavigationController *_giftsNavigationController;
 }
+
+-(void) load;
+-(void) loadGifts;
+
+-(void) save;
+-(void) saveGifts;
+
 @property (nonatomic, retain) IBOutlet UINavigationController *giftsNavigationController;
-
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, retain) NSMutableArray *gifts;
 
 @end

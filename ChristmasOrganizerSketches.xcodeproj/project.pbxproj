@@ -17,6 +17,7 @@
 		F42CBD7113AA00AF00C646AA /* GiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F42CBD6F13AA00AF00C646AA /* GiftViewController.xib */; };
 		F42CBD7513AA49EE00C646AA /* MoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F42CBD7313AA49ED00C646AA /* MoreTableViewController.m */; };
 		F42CBD7613AA49EE00C646AA /* MoreTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F42CBD7413AA49ED00C646AA /* MoreTableViewController.xib */; };
+		F42CBD7B13AA6F3B00C646AA /* Gift.m in Sources */ = {isa = PBXBuildFile; fileRef = F42CBD7913AA6F3B00C646AA /* Gift.m */; };
 		F45BDEFF13A8EB930011F57D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45BDEFE13A8EB930011F57D /* UIKit.framework */; };
 		F45BDF0113A8EB930011F57D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45BDF0013A8EB930011F57D /* Foundation.framework */; };
 		F45BDF0313A8EB930011F57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45BDF0213A8EB930011F57D /* CoreGraphics.framework */; };
@@ -42,6 +43,8 @@
 		F42CBD7213AA49ED00C646AA /* MoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreTableViewController.h; sourceTree = "<group>"; };
 		F42CBD7313AA49ED00C646AA /* MoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreTableViewController.m; sourceTree = "<group>"; };
 		F42CBD7413AA49ED00C646AA /* MoreTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreTableViewController.xib; sourceTree = "<group>"; };
+		F42CBD7813AA6F3B00C646AA /* Gift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gift.h; sourceTree = "<group>"; };
+		F42CBD7913AA6F3B00C646AA /* Gift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gift.m; sourceTree = "<group>"; };
 		F45BDEFA13A8EB930011F57D /* ChristmasOrganizerSketches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChristmasOrganizerSketches.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45BDEFE13A8EB930011F57D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F45BDF0013A8EB930011F57D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -69,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F42CBD7713AA6EFA00C646AA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F42CBD7813AA6F3B00C646AA /* Gift.h */,
+				F42CBD7913AA6F3B00C646AA /* Gift.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
 		F45BDEEF13A8EB930011F57D = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +111,7 @@
 		F45BDF0413A8EB930011F57D /* ChristmasOrganizerSketches */ = {
 			isa = PBXGroup;
 			children = (
+				F42CBD7713AA6EFA00C646AA /* Entities */,
 				F45BDF0D13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.h */,
 				F45BDF0E13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.m */,
 				F45BDF1013A8EB930011F57D /* MainWindow.xib */,
@@ -204,6 +217,7 @@
 				F42CBD6113A9FDA500C646AA /* PeopleWithGiftsTableViewController.m in Sources */,
 				F42CBD7013AA00AF00C646AA /* GiftViewController.m in Sources */,
 				F42CBD7513AA49EE00C646AA /* MoreTableViewController.m in Sources */,
+				F42CBD7B13AA6F3B00C646AA /* Gift.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
