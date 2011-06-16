@@ -11,6 +11,7 @@
 @implementation ChristmasOrganizerSketchesAppDelegate
 
 
+@synthesize giftsNavigationController = _giftsNavigationController;
 @synthesize window=_window;
 
 @synthesize tabBarController=_tabBarController;
@@ -67,6 +68,7 @@
 {
     [_window release];
     [_tabBarController release];
+    [_giftsNavigationController release];
     [super dealloc];
 }
 

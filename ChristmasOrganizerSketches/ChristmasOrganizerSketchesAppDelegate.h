@@ -10,7 +10,9 @@
 
 @interface ChristmasOrganizerSketchesAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
 
+    UINavigationController *_giftsNavigationController;
 }
+@property (nonatomic, retain) IBOutlet UINavigationController *giftsNavigationController;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
