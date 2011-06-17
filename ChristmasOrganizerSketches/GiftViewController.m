@@ -10,6 +10,7 @@
 
 
 @implementation GiftViewController
+@synthesize boughtSwitch;
 @synthesize saveButtonItem;
 @synthesize cancelButtonItem;
 @synthesize personTextField;
@@ -44,6 +45,7 @@
     [nameTextField release];
     [cancelButtonItem release];
     [saveButtonItem release];
+    [boughtSwitch release];
     [super dealloc];
 }
 
@@ -67,7 +69,7 @@
         self.priceTextField.text = [self.gift.price stringValue];
         self.placeTextField.text = self.gift.place;
         self.personTextField.text = self.gift.person;
-        
+        [self.boughtSwitch setOn:self.gift.bought];
     }
     
     self.navigationItem.leftBarButtonItem = self.cancelButtonItem;
@@ -82,6 +84,7 @@
     [self setNameTextField:nil];
     [self setCancelButtonItem:nil];
     [self setSaveButtonItem:nil];
+    [self setBoughtSwitch:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -100,8 +103,9 @@
         self.gift.price = [NSNumber numberWithInteger: [self.priceTextField.text integerValue]];
         self.gift.place = self.placeTextField.text;
         self.gift.person = self.personTextField.text;
+        self.gift.bought = [boughtSwitch isOn];
     } else {
-        Gift *g = [[Gift alloc] initWithName:self.nameTextField.text place:self.placeTextField.text price:[NSNumber numberWithInteger: [self.priceTextField.text integerValue]] person:self.personTextField.text];
+        Gift *g = [[Gift alloc] initWithName:self.nameTextField.text place:self.placeTextField.text price:[NSNumber numberWithInteger: [self.priceTextField.text integerValue]] person:self.personTextField.text bought:[boughtSwitch isOn]];
         [[((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) gifts] addObject:g];
         [g release];
     }
@@ -113,6 +117,12 @@
 -(IBAction) cancelButtonItemDidActivate:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

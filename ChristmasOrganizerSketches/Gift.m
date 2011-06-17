@@ -15,8 +15,9 @@
 @synthesize price = _price;
 @synthesize place = _place;
 @synthesize person = _person;
+@synthesize bought = _bought;
 
--(id)initWithName:(NSString *)name place:(NSString *)place price:(NSNumber *)price person:(NSString *)person
+-(id)initWithName:(NSString *)name place:(NSString *)place price:(NSNumber *)price person:(NSString *)person bought:(BOOL) bought
 {
     self = [super init];
     
@@ -24,6 +25,7 @@
     self.place = place;
     self.price = price;
     self.person = person;
+    self.bought = bought;
     
     return self;
 }
@@ -36,13 +38,14 @@
     self.place = [dict objectForKey:@"place"];
     self.price = [dict objectForKey:@"price"];
     self.person = [dict objectForKey:@"person"];
+    self.bought = [dict objectForKey:@"bought"] == @"true";
     
     return self;
 }
 
 -(NSDictionary*) toDictionary
 {
-    return [NSDictionary dictionaryWithObjectsAndKeys:self.name ?: @"",@"name",self.place ?:@"",@"place",self.price, @"price",self.person ?: @"", @"person", nil];
+    return [NSDictionary dictionaryWithObjectsAndKeys:self.name ?: @"",@"name",self.place ?:@"",@"place",self.price, @"price",self.person ?: @"", @"person",self.bought? @"true":@"false",@"bought", nil];
 }
 
 @end

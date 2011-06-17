@@ -13,7 +13,7 @@
     
 }
 
--(id)initWithName: (NSString* ) name place: (NSString*) place price: (NSNumber* ) price person: (NSString*) person;
+-(id)initWithName: (NSString* ) name place: (NSString*) place price: (NSNumber* ) price person: (NSString*) person bought:(BOOL) bought;
 
 -(id)initWithDictionary:(NSDictionary *)dict;
 
@@ -23,5 +23,6 @@
 @property (nonatomic,copy) NSString* place;
 @property (nonatomic,copy) NSNumber* price;
 @property (nonatomic,copy) NSString* person;
+@property (nonatomic,assign) BOOL bought;
 
 @end
