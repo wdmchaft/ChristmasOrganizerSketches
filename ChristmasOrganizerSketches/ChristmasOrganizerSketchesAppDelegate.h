@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GiftsTableViewController.h"
+#import "Gift.h"
 
 @interface ChristmasOrganizerSketchesAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
 
     UINavigationController *_giftsNavigationController;
+    GiftsTableViewController *_giftsTableViewController;
 }
 
 -(void) load;
@@ -19,6 +22,9 @@
 -(void) save;
 -(void) saveGifts;
 
+-(void) reloadGiftsTableViewController;
+
+@property (nonatomic, retain) IBOutlet GiftsTableViewController *giftsTableViewController;
 @property (nonatomic, retain) IBOutlet UINavigationController *giftsNavigationController;
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;

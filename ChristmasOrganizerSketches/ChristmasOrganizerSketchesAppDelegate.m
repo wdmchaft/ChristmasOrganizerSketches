@@ -7,11 +7,11 @@
 //
 
 #import "ChristmasOrganizerSketchesAppDelegate.h"
-#import "Gift.h"
 
 @implementation ChristmasOrganizerSketchesAppDelegate
 
 
+@synthesize giftsTableViewController = _giftsTableViewController;
 @synthesize giftsNavigationController = _giftsNavigationController;
 @synthesize window=_window;
 @synthesize gifts = _gifts;
@@ -78,6 +78,13 @@
 
 }
 
+#pragma mark - Reload tableViews
+
+-(void) reloadGiftsTableViewController
+{
+    [_giftsTableViewController reload ];
+}
+
 #pragma mark - Application Details
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -125,6 +132,7 @@
     [_window release];
     [_tabBarController release];
     [_giftsNavigationController release];
+    [_giftsTableViewController release];
     [super dealloc];
 }
 

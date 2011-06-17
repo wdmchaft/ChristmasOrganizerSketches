@@ -105,6 +105,7 @@
         [[((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) gifts] addObject:g];
         [g release];
     }
+    [((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) reloadGiftsTableViewController];
     
     [self.navigationController popViewControllerAnimated:YES];
 }

@@ -15,5 +15,6 @@
 }
 
 -(void) addButtonAction:(id)sender;
+-(void) reload;
 
 @end
