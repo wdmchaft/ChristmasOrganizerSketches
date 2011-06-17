@@ -38,7 +38,7 @@
     self.place = [dict objectForKey:@"place"];
     self.price = [dict objectForKey:@"price"];
     self.person = [dict objectForKey:@"person"];
-    self.bought = [dict objectForKey:@"bought"] == @"true";
+    self.bought = [(NSString* )[dict objectForKey:@"bought"] isEqualToString:@"true"] ;
     
     return self;
 }

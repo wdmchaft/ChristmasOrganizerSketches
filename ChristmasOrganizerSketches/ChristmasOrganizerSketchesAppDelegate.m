@@ -51,7 +51,7 @@
         }
     }
     else {
-        Gift *gift = [[Gift alloc] initWithName:@"iPod" place:@"Saturn" price:[NSNumber numberWithInt: 200] person:@""];
+        Gift *gift = [[Gift alloc] initWithName:@"iPod" place:@"Saturn" price:[NSNumber numberWithInt: 200] person:@"" bought:NO];
         [_gifts addObject:gift];
         [gift release];
     }

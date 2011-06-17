@@ -25,6 +25,7 @@
 		F45BDF0C13A8EB930011F57D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F45BDF0B13A8EB930011F57D /* main.m */; };
 		F45BDF0F13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F45BDF0E13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.m */; };
 		F45BDF1213A8EB930011F57D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45BDF1013A8EB930011F57D /* MainWindow.xib */; };
+		F4B33A8013AB8FC200548FC1 /* GiftTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B33A7F13AB8FC200548FC1 /* GiftTableCellView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		F45BDF0D13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChristmasOrganizerSketchesAppDelegate.h; sourceTree = "<group>"; };
 		F45BDF0E13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChristmasOrganizerSketchesAppDelegate.m; sourceTree = "<group>"; };
 		F45BDF1113A8EB930011F57D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		F4B33A7F13AB8FC200548FC1 /* GiftTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftTableCellView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				F42CBD5413A9FAE200C646AA /* GiftsTableViewController.h */,
 				F42CBD5513A9FAE200C646AA /* GiftsTableViewController.m */,
 				F42CBD5613A9FAE200C646AA /* GiftsTableViewController.xib */,
+				F4B33A7F13AB8FC200548FC1 /* GiftTableCellView.xib */,
 				F42CBD5E13A9FDA500C646AA /* PeopleWithGiftsTableViewController.h */,
 				F42CBD5F13A9FDA500C646AA /* PeopleWithGiftsTableViewController.m */,
 				F42CBD6013A9FDA500C646AA /* PeopleWithGiftsTableViewController.xib */,
@@ -200,6 +203,7 @@
 				F42CBD6213A9FDA500C646AA /* PeopleWithGiftsTableViewController.xib in Resources */,
 				F42CBD7113AA00AF00C646AA /* GiftViewController.xib in Resources */,
 				F42CBD7613AA49EE00C646AA /* MoreTableViewController.xib in Resources */,
+				F4B33A8013AB8FC200548FC1 /* GiftTableCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

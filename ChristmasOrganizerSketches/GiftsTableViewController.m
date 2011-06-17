@@ -18,6 +18,8 @@
     [super dealloc];
 }
 
+@synthesize tvCell = _tvCell;
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -101,15 +103,26 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        [[NSBundle mainBundle] loadNibNamed:@"GiftTableCellView" owner:self options:nil];
+        cell = _tvCell;
+        self.tvCell = nil;
     }
     
     // Configure the cell...
     
-    [cell.textLabel setText: [[_gifts objectAtIndex:indexPath.row] name]];
+    //[cell.textLabel setText: [[_gifts objectAtIndex:indexPath.row] name]];
+    //[cell.detailTextLabel setText:[[[_gifts objectAtIndex:indexPath.row] price] stringValue]];
+    
+    //cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    
+    [(UILabel *)[ cell viewWithTag:1] setText:[[_gifts objectAtIndex:indexPath.row] name]];
+    [(UILabel *)[ cell viewWithTag:2] setText:[[[_gifts objectAtIndex:indexPath.row] price] stringValue]];
+    NSString* bought = [[_gifts objectAtIndex:indexPath.row] bought] ? @"" : @"!";
+    [(UILabel *)[ cell viewWithTag:3] setText: bought];
     
     return cell;
 }
+
 
 /*
 // Override to support conditional editing of the table view.
