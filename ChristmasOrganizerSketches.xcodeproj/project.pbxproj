@@ -26,6 +26,9 @@
 		F45BDF0F13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F45BDF0E13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.m */; };
 		F45BDF1213A8EB930011F57D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45BDF1013A8EB930011F57D /* MainWindow.xib */; };
 		F4B33A8013AB8FC200548FC1 /* GiftTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B33A7F13AB8FC200548FC1 /* GiftTableCellView.xib */; };
+		F4E8A32913ACAF8A0047BFA2 /* 24-gift.png in Resources */ = {isa = PBXBuildFile; fileRef = F4E8A32813ACAF8A0047BFA2 /* 24-gift.png */; };
+		F4E8A32B13ACAFC30047BFA2 /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = F4E8A32A13ACAFC30047BFA2 /* 112-group.png */; };
+		F4E8A32D13ACB3FC0047BFA2 /* person_with_gift.png in Resources */ = {isa = PBXBuildFile; fileRef = F4E8A32C13ACB3FC0047BFA2 /* person_with_gift.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		F45BDF0E13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChristmasOrganizerSketchesAppDelegate.m; sourceTree = "<group>"; };
 		F45BDF1113A8EB930011F57D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		F4B33A7F13AB8FC200548FC1 /* GiftTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftTableCellView.xib; sourceTree = "<group>"; };
+		F4E8A32813ACAF8A0047BFA2 /* 24-gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "24-gift.png"; sourceTree = "<group>"; };
+		F4E8A32A13ACAFC30047BFA2 /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
+		F4E8A32C13ACB3FC0047BFA2 /* person_with_gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person_with_gift.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 		F45BDF0413A8EB930011F57D /* ChristmasOrganizerSketches */ = {
 			isa = PBXGroup;
 			children = (
+				F4E8A32713ACAF160047BFA2 /* Images */,
 				F42CBD7713AA6EFA00C646AA /* Entities */,
 				F45BDF0D13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.h */,
 				F45BDF0E13A8EB930011F57D /* ChristmasOrganizerSketchesAppDelegate.m */,
@@ -147,6 +154,16 @@
 				F45BDF0B13A8EB930011F57D /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4E8A32713ACAF160047BFA2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F4E8A32C13ACB3FC0047BFA2 /* person_with_gift.png */,
+				F4E8A32A13ACAFC30047BFA2 /* 112-group.png */,
+				F4E8A32813ACAF8A0047BFA2 /* 24-gift.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +221,9 @@
 				F42CBD7113AA00AF00C646AA /* GiftViewController.xib in Resources */,
 				F42CBD7613AA49EE00C646AA /* MoreTableViewController.xib in Resources */,
 				F4B33A8013AB8FC200548FC1 /* GiftTableCellView.xib in Resources */,
+				F4E8A32913ACAF8A0047BFA2 /* 24-gift.png in Resources */,
+				F4E8A32B13ACAFC30047BFA2 /* 112-group.png in Resources */,
+				F4E8A32D13ACB3FC0047BFA2 /* person_with_gift.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
