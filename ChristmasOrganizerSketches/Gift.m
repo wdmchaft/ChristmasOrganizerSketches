@@ -16,8 +16,9 @@
 @synthesize place = _place;
 @synthesize person = _person;
 @synthesize bought = _bought;
+@synthesize image = _image;
 
--(id)initWithName:(NSString *)name place:(NSString *)place price:(NSNumber *)price person:(NSString *)person bought:(BOOL) bought
+-(id)initWithName:(NSString *)name place:(NSString *)place price:(NSNumber *)price person:(NSString *)person bought:(BOOL) bought image:(UIImage *)image
 {
     self = [super init];
     
@@ -26,6 +27,7 @@
     self.price = price;
     self.person = person;
     self.bought = bought;
+    self.image = image;
     
     return self;
 }
@@ -38,14 +40,19 @@
     self.place = [dict objectForKey:@"place"];
     self.price = [dict objectForKey:@"price"];
     self.person = [dict objectForKey:@"person"];
-    self.bought = [(NSString* )[dict objectForKey:@"bought"] isEqualToString:@"true"] ;
-    
+    self.bought = [(NSString* )[dict objectForKey:@"bought"] isEqualToString:@"true"];
+    NSData* imageData = [dict objectForKey:@"image"];
+    if(imageData != nil){
+        self.image = [[UIImage alloc ] initWithData:imageData];
+        [self.image release];
+    }
     return self;
 }
 
 -(NSDictionary*) toDictionary
 {
-    return [NSDictionary dictionaryWithObjectsAndKeys:self.name ?: @"",@"name",self.place ?:@"",@"place",self.price, @"price",self.person ?: @"", @"person",self.bought? @"true":@"false",@"bought", nil];
+    NSData* imageData = UIImageJPEGRepresentation(self.image, 1.0);
+    return [NSDictionary dictionaryWithObjectsAndKeys:self.name ?: @"",@"name",self.place ?:@"",@"place",self.price, @"price",self.person ?: @"", @"person",self.bought? @"true":@"false",@"bought", imageData,@"image", nil];
 }
 
 @end

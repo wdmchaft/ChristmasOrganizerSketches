@@ -10,6 +10,7 @@
 
 
 @implementation GiftViewController
+@synthesize imageButton;
 @synthesize boughtSwitch;
 @synthesize saveButtonItem;
 @synthesize cancelButtonItem;
@@ -46,6 +47,7 @@
     [cancelButtonItem release];
     [saveButtonItem release];
     [boughtSwitch release];
+    [imageButton release];
     [super dealloc];
 }
 
@@ -70,6 +72,7 @@
         self.placeTextField.text = self.gift.place;
         self.personTextField.text = self.gift.person;
         [self.boughtSwitch setOn:self.gift.bought];
+        [self.imageButton setImage:self.gift.image forState:UIControlStateNormal];
     }
     
     self.navigationItem.leftBarButtonItem = self.cancelButtonItem;
@@ -85,6 +88,7 @@
     [self setCancelButtonItem:nil];
     [self setSaveButtonItem:nil];
     [self setBoughtSwitch:nil];
+    [self setImageButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -104,8 +108,9 @@
         self.gift.place = self.placeTextField.text;
         self.gift.person = self.personTextField.text;
         self.gift.bought = [boughtSwitch isOn];
+        self.gift.image = [imageButton imageForState:UIControlStateNormal];
     } else {
-        Gift *g = [[Gift alloc] initWithName:self.nameTextField.text place:self.placeTextField.text price:[NSNumber numberWithInteger: [self.priceTextField.text integerValue]] person:self.personTextField.text bought:[boughtSwitch isOn]];
+        Gift *g = [[Gift alloc] initWithName:self.nameTextField.text place:self.placeTextField.text price:[NSNumber numberWithInteger: [self.priceTextField.text integerValue]] person:self.personTextField.text bought:[boughtSwitch isOn] image:[imageButton imageForState:UIControlStateNormal]];
         [[((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) gifts] addObject:g];
         [g release];
     }
@@ -123,6 +128,58 @@
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+-(IBAction)imageButtonClicked:(id)sender
+{
+    [self startMediaBrowserFromViewController:self usingDelegate:self];
+}
+
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
+{
+    UIImage* selectedImage = [editingInfo objectForKey:UIImagePickerControllerEditedImage];
+    if(!selectedImage){
+        selectedImage = [editingInfo objectForKey:UIImagePickerControllerOriginalImage];
+    }
+    [self.imageButton setImage:selectedImage forState:UIControlStateNormal];
+    [[picker parentViewController] dismissModalViewControllerAnimated:YES];
+    [picker release];
+}
+
+- (BOOL) startMediaBrowserFromViewController: (UIViewController*) controller
+                               usingDelegate: (id <UIImagePickerControllerDelegate,
+                                               UINavigationControllerDelegate>) delegate {
+    
+    
+    
+    if (([UIImagePickerController isSourceTypeAvailable:
+          UIImagePickerControllerSourceTypeSavedPhotosAlbum] == NO)
+        || (delegate == nil)
+        || (controller == nil))
+    {
+        return NO;
+    }
+    
+    UIImagePickerController *mediaUI = [[UIImagePickerController alloc] init];
+    mediaUI.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    
+    // Displays saved pictures and movies, if both are available, from the
+    // Camera Roll album.
+    mediaUI.mediaTypes =
+    [UIImagePickerController availableMediaTypesForSourceType:
+     UIImagePickerControllerSourceTypeSavedPhotosAlbum];
+    
+    
+    // Hides the controls for moving & scaling pictures, or for
+    // trimming movies. To instead show the controls, use YES.
+    mediaUI.allowsEditing = YES;
+    
+    mediaUI.delegate = delegate;
+    
+    [controller presentModalViewController: mediaUI animated: YES];
+    
+    return YES;
+    
 }
 
 @end

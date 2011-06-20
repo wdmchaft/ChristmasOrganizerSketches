@@ -51,7 +51,7 @@
         }
     }
     else {
-        Gift *gift = [[Gift alloc] initWithName:@"iPod" place:@"Saturn" price:[NSNumber numberWithInt: 200] person:@"" bought:NO];
+        Gift *gift = [[Gift alloc] initWithName:@"iPod" place:@"Saturn" price:[NSNumber numberWithInt: 200] person:@"" bought:NO image:nil];
         [_gifts addObject:gift];
         [gift release];
     }
@@ -71,8 +71,10 @@
     
     NSMutableArray *data = [NSMutableArray array];
     for (Gift *gift in _gifts) {
+        NSLog(@"Saving gift");
         [data addObject:[gift toDictionary]];
     }
+    
     NSString* documentsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     [data writeToFile:[documentsDir stringByAppendingPathComponent:@"gifts.plist"] atomically:YES];
 

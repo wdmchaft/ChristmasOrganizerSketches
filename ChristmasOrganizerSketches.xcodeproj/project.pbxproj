@@ -29,6 +29,7 @@
 		F4E8A32913ACAF8A0047BFA2 /* 24-gift.png in Resources */ = {isa = PBXBuildFile; fileRef = F4E8A32813ACAF8A0047BFA2 /* 24-gift.png */; };
 		F4E8A32B13ACAFC30047BFA2 /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = F4E8A32A13ACAFC30047BFA2 /* 112-group.png */; };
 		F4E8A32D13ACB3FC0047BFA2 /* person_with_gift.png in Resources */ = {isa = PBXBuildFile; fileRef = F4E8A32C13ACB3FC0047BFA2 /* person_with_gift.png */; };
+		F4E8A33113AF6D5A0047BFA2 /* gift_red.png in Resources */ = {isa = PBXBuildFile; fileRef = F4E8A33013AF6D5A0047BFA2 /* gift_red.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,9 @@
 		F4E8A32813ACAF8A0047BFA2 /* 24-gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "24-gift.png"; sourceTree = "<group>"; };
 		F4E8A32A13ACAFC30047BFA2 /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
 		F4E8A32C13ACB3FC0047BFA2 /* person_with_gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person_with_gift.png; sourceTree = "<group>"; };
+		F4E8A32E13AF6B9D0047BFA2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = /Users/simon/Documents/XcodeProjects/test/ChristmasOrganizerSketches/ChristmasOrganizerSketches/de.lproj/InfoPlist.strings; sourceTree = "<absolute>"; };
+		F4E8A32F13AF6B9D0047BFA2 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = /Users/simon/Documents/XcodeProjects/test/ChristmasOrganizerSketches/ChristmasOrganizerSketches/de.lproj/MainWindow.xib; sourceTree = "<absolute>"; };
+		F4E8A33013AF6D5A0047BFA2 /* gift_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gift_red.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 		F4E8A32713ACAF160047BFA2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F4E8A33013AF6D5A0047BFA2 /* gift_red.png */,
 				F4E8A32C13ACB3FC0047BFA2 /* person_with_gift.png */,
 				F4E8A32A13ACAFC30047BFA2 /* 112-group.png */,
 				F4E8A32813ACAF8A0047BFA2 /* 24-gift.png */,
@@ -224,6 +229,7 @@
 				F4E8A32913ACAF8A0047BFA2 /* 24-gift.png in Resources */,
 				F4E8A32B13ACAFC30047BFA2 /* 112-group.png in Resources */,
 				F4E8A32D13ACB3FC0047BFA2 /* person_with_gift.png in Resources */,
+				F4E8A33113AF6D5A0047BFA2 /* gift_red.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +258,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F45BDF0813A8EB930011F57D /* en */,
+				F4E8A32E13AF6B9D0047BFA2 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -260,6 +267,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F45BDF1113A8EB930011F57D /* en */,
+				F4E8A32F13AF6B9D0047BFA2 /* de */,
 			);
 			name = MainWindow.xib;
 			sourceTree = "<group>";

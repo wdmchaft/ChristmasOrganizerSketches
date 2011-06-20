@@ -11,7 +11,7 @@
 #import "ChristmasOrganizerSketchesAppDelegate.h"
 
 
-@interface GiftViewController : UIViewController <UITextFieldDelegate> {
+@interface GiftViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate> {
     
     UITextField *personTextField;
     UITextField *placeTextField;
@@ -20,13 +20,19 @@
     UIBarButtonItem *cancelButtonItem;
     UIBarButtonItem *saveButtonItem;
     UISwitch *boughtSwitch;
+    UIButton *imageButton;
 }
 
 -(id)initWithGiftOrNil: (Gift *) gift nibNameOrNil: (NSString *)nibNameOrNil bundleOrNil:(NSBundle *)nibBundleOrNil;
 
 - (IBAction)cancelButtonItemDidActivate:(id)sender;
 - (IBAction)saveButtonItemDidActivate:(id)sender;
+- (IBAction)imageButtonClicked:(id)sender;
+- (BOOL) startMediaBrowserFromViewController: (UIViewController*) controller
+                               usingDelegate: (id <UIImagePickerControllerDelegate,
+                                               UINavigationControllerDelegate>) delegate;
 
+@property (nonatomic, retain) IBOutlet UIButton *imageButton;
 @property (nonatomic, retain) IBOutlet UISwitch *boughtSwitch;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *saveButtonItem;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButtonItem;
