@@ -116,10 +116,25 @@
     //cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     
     [(UILabel *)[ cell viewWithTag:1] setText:[[_gifts objectAtIndex:indexPath.row] name]];
-    [(UILabel *)[ cell viewWithTag:2] setText:[[[_gifts objectAtIndex:indexPath.row] price] stringValue]];
+    
+    NSString* price = nil;
+    if([[_gifts objectAtIndex:indexPath.row] price] && [[_gifts objectAtIndex:indexPath.row] price] > 0){
+        price = [NSString stringWithFormat:@"%@ €",[[[_gifts objectAtIndex:indexPath.row] price] stringValue]];
+    }
+    [(UILabel *)[ cell viewWithTag:2] setText:price];
+    
     NSString* bought = [[_gifts objectAtIndex:indexPath.row] bought] ? @"" : @"!";
     [(UILabel *)[ cell viewWithTag:3] setText: bought];
+    [bought release];
     
+    NSString* person = nil;
+    if([[_gifts objectAtIndex:indexPath.row] person] && [[[_gifts objectAtIndex:indexPath.row] person] length]){
+        person = [NSString  stringWithFormat:@"(%@)",[[_gifts objectAtIndex:indexPath.row] person]];
+    }
+    [(UILabel *)[ cell viewWithTag:4] setText:person];
+    if([[_gifts objectAtIndex:indexPath.row] image]){
+        [(UIImageView *)[ cell viewWithTag:5] setImage:[[_gifts objectAtIndex:indexPath.row] image]];
+    }
     return cell;
 }
 
