@@ -1,54 +1,50 @@
 //
-//  GiftViewController.m
+//  PersonDetailViewController.m
 //  ChristmasOrganizerSketches
 //
-//  Created by Simon Meurer on 16.06.11.
+//  Created by Simon Meurer on 20.06.11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "GiftViewController.h"
+#import "PersonDetailViewController.h"
 
 
-@implementation GiftViewController
+@implementation PersonDetailViewController
 @synthesize imageButton;
-@synthesize boughtSwitch;
-@synthesize saveButtonItem;
+@synthesize firstTextField;
+@synthesize lastTextField;
+@synthesize nickTextField;
+@synthesize budgetSlider;
 @synthesize cancelButtonItem;
-@synthesize personTextField;
-@synthesize placeTextField;
-@synthesize priceTextField;
-@synthesize nameTextField;
-@synthesize gift = _gift;
+@synthesize person = _person;
+@synthesize saveButtonItem;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
+        // Custom initialization
     }
     return self;
 }
 
--(id)initWithGiftOrNil:(Gift *)gift nibNameOrNil:(NSString *)nibNameOrNil bundleOrNil:(NSBundle *)nibBundleOrNil
+-(id) initWithPersonOrNil:(Person *)person nibNameOrNil:(NSString *)nibNameOrNil bundleOrNil:(NSBundle *)nibBundleOrNil
 {
     self = [self initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    
-    self.gift = gift;
-    
+    self.person = person;
     return self;
 }
 
 - (void)dealloc
 {
-    [_gift release];
-    [personTextField release];
-    [placeTextField release];
-    [priceTextField release];
-    [nameTextField release];
-    [cancelButtonItem release];
-    [saveButtonItem release];
-    [boughtSwitch release];
+    [_person release];
     [imageButton release];
+    [firstTextField release];
+    [lastTextField release];
+    [nickTextField release];
+    [budgetSlider release];
+    [saveButtonItem release];
+    [cancelButtonItem release];
     [super dealloc];
 }
 
@@ -65,15 +61,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    if(self.gift)
+    // Do any additional setup after loading the view from its nib.
+    if(self.person)
     {
-        self.nameTextField.text = self.gift.name;
-        self.priceTextField.text = [self.gift.price stringValue];
-        self.placeTextField.text = self.gift.place;
-        self.personTextField.text = self.gift.person;
-        [self.boughtSwitch setOn:self.gift.bought];
-        [self.imageButton setImage:self.gift.image forState:UIControlStateNormal];
+        self.firstTextField.text = self.person.firstname;
+        self.lastTextField.text = self.person.lastname;
+        self.nickTextField.text = self.person.nickname;
+        self.budgetSlider.value = [self.person.budget floatValue];
+        [self.imageButton setImage:self.person.image forState:UIControlStateNormal];
     }
     
     self.navigationItem.leftBarButtonItem = self.cancelButtonItem;
@@ -82,14 +77,13 @@
 
 - (void)viewDidUnload
 {
-    [self setPersonTextField:nil];
-    [self setPlaceTextField:nil];
-    [self setPriceTextField:nil];
-    [self setNameTextField:nil];
-    [self setCancelButtonItem:nil];
-    [self setSaveButtonItem:nil];
-    [self setBoughtSwitch:nil];
     [self setImageButton:nil];
+    [self setFirstTextField:nil];
+    [self setLastTextField:nil];
+    [self setNickTextField:nil];
+    [self setBudgetSlider:nil];
+    [self setSaveButtonItem:nil];
+    [self setCancelButtonItem:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -101,21 +95,21 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
 -(IBAction) saveButtonItemDidActivate:(id)sender
 {
-    if(self.gift){
-        self.gift.name = self.nameTextField.text;
-        self.gift.price = [NSNumber numberWithInteger: [self.priceTextField.text integerValue]];
-        self.gift.place = self.placeTextField.text;
-        self.gift.person = self.personTextField.text;
-        self.gift.bought = [boughtSwitch isOn];
-        self.gift.image = [imageButton imageForState:UIControlStateNormal];
+    if(self.person){
+        self.person.firstname = self.firstTextField.text;
+        self.person.lastname = self.lastTextField.text;
+        self.person.nickname = self.nickTextField.text;
+        self.person.budget = [NSNumber numberWithFloat:self.budgetSlider.value ];
+        self.person.image = [imageButton imageForState:UIControlStateNormal];
     } else {
-        Gift *g = [[Gift alloc] initWithName:self.nameTextField.text place:self.placeTextField.text price:[NSNumber numberWithInteger: [self.priceTextField.text integerValue]] person:self.personTextField.text bought:[boughtSwitch isOn] image:[imageButton imageForState:UIControlStateNormal]];
-        [[((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) gifts] addObject:g];
-        [g release];
+        Person *p = [[Person alloc] initWithFirstname:self.firstTextField.text lastname:self.lastTextField.text nickname:self.nickTextField.text budget: [NSNumber numberWithFloat:self.budgetSlider.value ] image:[imageButton imageForState:UIControlStateNormal]];
+        [[((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) persons] addObject:p];
+        [p release];
     }
-    [((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) reloadGiftsTableViewController];
+    [((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) reloadPeopleTableViewController];
     
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -182,5 +176,6 @@
     [[picker parentViewController] dismissModalViewControllerAnimated:YES];
     [picker release];
 }
+
 
 @end

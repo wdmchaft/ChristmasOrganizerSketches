@@ -7,8 +7,6 @@
 //
 
 #import "GiftsTableViewController.h"
-#import "GiftViewController.h"
-#import "ChristmasOrganizerSketchesAppDelegate.h"
 
 
 @implementation GiftsTableViewController
@@ -132,6 +130,7 @@
         person = [NSString  stringWithFormat:@"(%@)",[[_gifts objectAtIndex:indexPath.row] person]];
     }
     [(UILabel *)[ cell viewWithTag:4] setText:person];
+    
     if([[_gifts objectAtIndex:indexPath.row] image]){
         [(UIImageView *)[ cell viewWithTag:5] setImage:[[_gifts objectAtIndex:indexPath.row] image]];
     }
@@ -148,19 +147,22 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [_gifts removeObjectAtIndex:indexPath.row];
+        
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.

@@ -12,9 +12,11 @@
 
 
 @synthesize giftsTableViewController = _giftsTableViewController;
+@synthesize peopleTableViewController = _peopleTableViewController;
 @synthesize giftsNavigationController = _giftsNavigationController;
 @synthesize window=_window;
 @synthesize gifts = _gifts;
+@synthesize persons = _persons;
 
 @synthesize tabBarController=_tabBarController;
 
@@ -33,6 +35,7 @@
 {
     NSLog(@"load");
     [self loadGifts];
+    [self loadPersons];
 }
 
 - (void)loadGifts
@@ -57,12 +60,35 @@
     }
 }
 
+-(void) loadPersons
+{
+    NSLog(@"loadPersons");
+    
+    NSString* documentsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    
+    NSString *path = [documentsDir stringByAppendingPathComponent:@"persons.plist"];
+    NSFileManager* fileManager = [NSFileManager defaultManager];
+    self.persons = [[NSMutableArray alloc ] init];
+    if([fileManager fileExistsAtPath:path]){
+        NSArray *data = [NSArray arrayWithContentsOfFile:path];
+        for (NSDictionary *dict in data) {
+            [self.persons addObject:[[Person alloc] initWithDictionary:dict]];
+        }
+    }
+    else {
+        Person *p = [[Person alloc] initWithFirstname:@"Toni" lastname:@"Tester" nickname:@"TT" budget:[NSNumber numberWithInt:150] image:nil];
+        [_persons addObject:p];
+        [p release];
+    } 
+}
+
 #pragma mark - Save
 
 -(void)save
 {
     NSLog(@"save");
     [self saveGifts];
+    [self savePersons];
 }
 
 -(void)saveGifts
@@ -71,7 +97,7 @@
     
     NSMutableArray *data = [NSMutableArray array];
     for (Gift *gift in _gifts) {
-        NSLog(@"Saving gift");
+        NSLog(@"Saving gift: %@", gift.name);
         [data addObject:[gift toDictionary]];
     }
     
@@ -80,11 +106,32 @@
 
 }
 
+-(void) savePersons
+{
+    
+    NSLog(@"savePersons");
+    
+    NSMutableArray *data = [NSMutableArray array];
+    for (Person *person in _persons) {
+        NSLog(@"Saving person: %@",person.firstname);
+        [data addObject:[person toDictionary]];
+    }
+    
+    NSString* documentsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    [data writeToFile:[documentsDir stringByAppendingPathComponent:@"persons.plist"] atomically:YES];
+
+}
+
 #pragma mark - Reload tableViews
 
 -(void) reloadGiftsTableViewController
 {
     [_giftsTableViewController reload ];
+}
+
+-(void) reloadPeopleTableViewController
+{
+    [_peopleTableViewController reload ];
 }
 
 #pragma mark - Application Details
@@ -131,9 +178,12 @@
 
 - (void)dealloc
 {
+    [_gifts release];
+    [_persons release];
     [_window release];
     [_tabBarController release];
     [_giftsNavigationController release];
+    [_peopleTableViewController release];
     [_giftsTableViewController release];
     [super dealloc];
 }

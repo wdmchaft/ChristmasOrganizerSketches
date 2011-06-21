@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChristmasOrganizerSketchesAppDelegate.h"
+#import "PersonDetailViewController.h"
 
 
-@interface PeopleTableViewController : UITableViewController {
+@interface PeopleTableViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource> {
     
+    NSMutableArray* _persons;
 }
+-(void) addButtonAction:(id)sender;
+-(void) reload;
 
 @end

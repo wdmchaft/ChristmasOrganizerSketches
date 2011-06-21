@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F42B4BE713B0D7E500DDC613 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = F42B4BE613B0D7E500DDC613 /* Person.m */; };
+		F42B4BEA13B0DE3900DDC613 /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = F42B4BE913B0DE3900DDC613 /* smile.png */; };
 		F42CBD5713A9FAE200C646AA /* GiftsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F42CBD5513A9FAE200C646AA /* GiftsTableViewController.m */; };
 		F42CBD5813A9FAE200C646AA /* GiftsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F42CBD5613A9FAE200C646AA /* GiftsTableViewController.xib */; };
 		F42CBD5C13A9FC0900C646AA /* PeopleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F42CBD5A13A9FC0900C646AA /* PeopleTableViewController.m */; };
@@ -32,9 +34,14 @@
 		F4E8A33113AF6D5A0047BFA2 /* gift_red.png in Resources */ = {isa = PBXBuildFile; fileRef = F4E8A33013AF6D5A0047BFA2 /* gift_red.png */; };
 		F4E8A33413AF811C0047BFA2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F4E8A33213AF811B0047BFA2 /* LICENSE */; };
 		F4E8A33513AF811C0047BFA2 /* README in Resources */ = {isa = PBXBuildFile; fileRef = F4E8A33313AF811B0047BFA2 /* README */; };
+		F4E8A34313AF8C3C0047BFA2 /* PersonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E8A34113AF8C3C0047BFA2 /* PersonDetailViewController.m */; };
+		F4E8A34413AF8C3C0047BFA2 /* PersonDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E8A34213AF8C3C0047BFA2 /* PersonDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F42B4BE513B0D7E500DDC613 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		F42B4BE613B0D7E500DDC613 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		F42B4BE913B0DE3900DDC613 /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
 		F42CBD5413A9FAE200C646AA /* GiftsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftsTableViewController.h; sourceTree = "<group>"; };
 		F42CBD5513A9FAE200C646AA /* GiftsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftsTableViewController.m; sourceTree = "<group>"; };
 		F42CBD5613A9FAE200C646AA /* GiftsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftsTableViewController.xib; sourceTree = "<group>"; };
@@ -72,6 +79,9 @@
 		F4E8A33013AF6D5A0047BFA2 /* gift_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gift_red.png; sourceTree = "<group>"; };
 		F4E8A33213AF811B0047BFA2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F4E8A33313AF811B0047BFA2 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		F4E8A34013AF8C3B0047BFA2 /* PersonDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonDetailViewController.h; sourceTree = "<group>"; };
+		F4E8A34113AF8C3C0047BFA2 /* PersonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonDetailViewController.m; sourceTree = "<group>"; };
+		F4E8A34213AF8C3C0047BFA2 /* PersonDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +103,8 @@
 			children = (
 				F42CBD7813AA6F3B00C646AA /* Gift.h */,
 				F42CBD7913AA6F3B00C646AA /* Gift.m */,
+				F42B4BE513B0D7E500DDC613 /* Person.h */,
+				F42B4BE613B0D7E500DDC613 /* Person.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -150,6 +162,9 @@
 				F42CBD7213AA49ED00C646AA /* MoreTableViewController.h */,
 				F42CBD7313AA49ED00C646AA /* MoreTableViewController.m */,
 				F42CBD7413AA49ED00C646AA /* MoreTableViewController.xib */,
+				F4E8A34013AF8C3B0047BFA2 /* PersonDetailViewController.h */,
+				F4E8A34113AF8C3C0047BFA2 /* PersonDetailViewController.m */,
+				F4E8A34213AF8C3C0047BFA2 /* PersonDetailViewController.xib */,
 				F45BDF0513A8EB930011F57D /* Supporting Files */,
 			);
 			path = ChristmasOrganizerSketches;
@@ -169,6 +184,7 @@
 		F4E8A32713ACAF160047BFA2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F42B4BE913B0DE3900DDC613 /* smile.png */,
 				F4E8A33013AF6D5A0047BFA2 /* gift_red.png */,
 				F4E8A32C13ACB3FC0047BFA2 /* person_with_gift.png */,
 				F4E8A32A13ACAFC30047BFA2 /* 112-group.png */,
@@ -238,6 +254,8 @@
 				F4E8A33113AF6D5A0047BFA2 /* gift_red.png in Resources */,
 				F4E8A33413AF811C0047BFA2 /* LICENSE in Resources */,
 				F4E8A33513AF811C0047BFA2 /* README in Resources */,
+				F4E8A34413AF8C3C0047BFA2 /* PersonDetailViewController.xib in Resources */,
+				F42B4BEA13B0DE3900DDC613 /* smile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +274,8 @@
 				F42CBD7013AA00AF00C646AA /* GiftViewController.m in Sources */,
 				F42CBD7513AA49EE00C646AA /* MoreTableViewController.m in Sources */,
 				F42CBD7B13AA6F3B00C646AA /* Gift.m in Sources */,
+				F4E8A34313AF8C3C0047BFA2 /* PersonDetailViewController.m in Sources */,
+				F42B4BE713B0D7E500DDC613 /* Person.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

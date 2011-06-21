@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GiftViewController.h"
+#import "ChristmasOrganizerSketchesAppDelegate.h"
 
 
 @interface GiftsTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>{
