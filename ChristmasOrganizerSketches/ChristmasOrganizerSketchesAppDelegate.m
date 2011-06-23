@@ -7,9 +7,10 @@
 //
 
 #import "ChristmasOrganizerSketchesAppDelegate.h"
+#import "GiftsTableViewController.h"
+#import "PeopleTableViewController.h"
 
 @implementation ChristmasOrganizerSketchesAppDelegate
-
 
 @synthesize giftsTableViewController = _giftsTableViewController;
 @synthesize peopleTableViewController = _peopleTableViewController;
@@ -131,6 +132,7 @@
 
 -(void) reloadPeopleTableViewController
 {
+    NSLog(@"reloadPeopleTableViewController");
     [_peopleTableViewController reload ];
 }
 

@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GiftsTableViewController.h"
-#import "PeopleTableViewController.h"
 #import "Gift.h"
 #import "Person.h"
+
+@class PeopleTableViewController;
+@class GiftsTableViewController;
 
 @interface ChristmasOrganizerSketchesAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
 

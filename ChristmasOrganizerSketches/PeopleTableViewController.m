@@ -16,6 +16,8 @@
     [super dealloc];
 }
 
+@synthesize tvCell = _tvCell;
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -74,6 +76,7 @@
 
 -(void) reload
 {
+    NSLog(@"PeopleTableViewController reload");
     [self.tableView reloadData];
 }
 
@@ -99,14 +102,37 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        //cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        
+        
+        [[NSBundle mainBundle] loadNibNamed:@"PersonTableCellView" owner:self options:nil];
+        cell = _tvCell;
+        self.tvCell = nil;
     }
     
     // Configure the cell...
     
-    [cell.textLabel setText: [[_persons objectAtIndex: indexPath.row] firstname]];
+    /*[cell.textLabel setText: [[_persons objectAtIndex: indexPath.row] firstname]];
     [cell.detailTextLabel setText: [[[_persons objectAtIndex: indexPath.row] budget] stringValue]];
+    
     cell.imageView.image = [[_persons objectAtIndex: indexPath.row] image];
+    */
+    
+    NSString* name = [[_persons objectAtIndex:indexPath.row] nickname];
+    if(!name || [name length] == 0){
+        name = [[[[_persons objectAtIndex:indexPath.row] firstname] stringByAppendingString: @" "  ] stringByAppendingString: [[_persons objectAtIndex:indexPath.row] lastname]];
+    } 
+    [(UILabel *)[ cell viewWithTag:1] setText:name];
+    
+    NSString* budget = nil;
+    if([[_persons objectAtIndex:indexPath.row] budget] && [[_persons objectAtIndex:indexPath.row] budget] > 0){
+        budget = [NSString stringWithFormat:@"%@ €",[[[_persons objectAtIndex:indexPath.row] budget] stringValue]];
+    }
+    [(UILabel *)[ cell viewWithTag:2] setText:budget];
+    
+    if([[_persons objectAtIndex:indexPath.row] image]){
+        [(UIImageView *)[ cell viewWithTag:5] setImage:[[_persons objectAtIndex:indexPath.row] image]];
+    }
     
     return cell;
 }

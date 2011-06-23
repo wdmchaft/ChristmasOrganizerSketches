@@ -18,4 +18,6 @@
 -(void) addButtonAction:(id)sender;
 -(void) reload;
 
+@property (nonatomic,assign) IBOutlet UITableViewCell *tvCell;
+
 @end

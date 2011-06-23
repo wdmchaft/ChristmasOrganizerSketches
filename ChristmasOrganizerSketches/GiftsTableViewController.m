@@ -103,16 +103,19 @@
     if (cell == nil) {
         [[NSBundle mainBundle] loadNibNamed:@"GiftTableCellView" owner:self options:nil];
         cell = _tvCell;
+        
+        //cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
         self.tvCell = nil;
     }
     
     // Configure the cell...
     
-    //[cell.textLabel setText: [[_gifts objectAtIndex:indexPath.row] name]];
-    //[cell.detailTextLabel setText:[[[_gifts objectAtIndex:indexPath.row] price] stringValue]];
+    /*[cell.textLabel setText: [[_gifts objectAtIndex:indexPath.row] name]];
+    [cell.detailTextLabel setText:[[[_gifts objectAtIndex:indexPath.row] price] stringValue]];
+    cell.imageView.image = [[_gifts objectAtIndex: indexPath.row] image];
     
-    //cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-    
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    */
     [(UILabel *)[ cell viewWithTag:1] setText:[[_gifts objectAtIndex:indexPath.row] name]];
     
     NSString* price = nil;
