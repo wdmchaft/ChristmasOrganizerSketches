@@ -118,10 +118,7 @@
     cell.imageView.image = [[_persons objectAtIndex: indexPath.row] image];
     */
     
-    NSString* name = [[_persons objectAtIndex:indexPath.row] nickname];
-    if(!name || [name length] == 0){
-        name = [[[[_persons objectAtIndex:indexPath.row] firstname] stringByAppendingString: @" "  ] stringByAppendingString: [[_persons objectAtIndex:indexPath.row] lastname]];
-    } 
+    NSString* name = [[_persons objectAtIndex:indexPath.row] name];
     [(UILabel *)[ cell viewWithTag:1] setText:name];
     
     NSString* budget = nil;

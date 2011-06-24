@@ -92,7 +92,7 @@
         }
     }
     else {
-        Person *p = [[Person alloc] initWithIdent: [NSNumber numberWithInt:1] Firstname:@"Toni" lastname:@"Tester" nickname:@"TT" budget:[NSNumber numberWithInt:150] image:nil];
+        Person *p = [[Person alloc] initWithIdent: [NSNumber numberWithInt:1] name:@"Toni Tester" budget:[NSNumber numberWithInt:150] image:nil];
         [_persons addObject:p];
         [p release];
         self.nextPersonIdent = [NSNumber numberWithInt:2];
@@ -130,7 +130,7 @@
     
     NSMutableArray *data = [NSMutableArray array];
     for (Person *person in _persons) {
-        NSLog(@"Saving person: %@",person.firstname);
+        NSLog(@"Saving person: %@",person.name);
         [data addObject:[person toDictionary]];
     }
     
@@ -170,6 +170,16 @@
         self.nextPersonIdent = [NSNumber numberWithInt:([self.nextPersonIdent intValue] + 1)];
     }
     [self.persons addObject:person];
+}
+
+#pragma mark getting Things
+
+-(NSMutableArray*) getGiftsForPerson:(Person *)person
+{
+    NSMutableArray* result = [NSMutableArray array];
+    for(Gift* g in self.gifts){
+        
+    }
 }
 
 #pragma mark - Application Details

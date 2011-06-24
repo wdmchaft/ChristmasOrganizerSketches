@@ -32,7 +32,6 @@
 -(void) reloadPeopleTableViewController;
 
 -(NSMutableArray*) getGiftsForPerson: (Person*) person;
--(float) getGiftPricesForPerson: (Person*) person;
 
 -(void) addGift: (Gift*) gift;
 -(void) addPerson: (Person*) person;

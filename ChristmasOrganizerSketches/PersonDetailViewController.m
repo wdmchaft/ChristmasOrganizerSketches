@@ -12,12 +12,10 @@
 @implementation PersonDetailViewController
 @synthesize budgetTextField;
 @synthesize imageButton;
-@synthesize firstTextField;
-@synthesize lastTextField;
-@synthesize nickTextField;
 @synthesize cancelButtonItem;
 @synthesize person = _person;
 @synthesize saveButtonItem;
+@synthesize nameTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,12 +37,10 @@
 {
     [_person release];
     [imageButton release];
-    [firstTextField release];
-    [lastTextField release];
-    [nickTextField release];
     [saveButtonItem release];
     [cancelButtonItem release];
     [budgetTextField release];
+    [nameTextField release];
     [super dealloc];
 }
 
@@ -64,9 +60,7 @@
     // Do any additional setup after loading the view from its nib.
     if(self.person)
     {
-        self.firstTextField.text = self.person.firstname;
-        self.lastTextField.text = self.person.lastname;
-        self.nickTextField.text = self.person.nickname;
+        self.nameTextField.text = self.person.name;
         self.budgetTextField.text = [NSString stringWithFormat: @"%g" ,[self.person.budget floatValue]];
         [self.imageButton setImage:self.person.image forState:UIControlStateNormal];
     }
@@ -78,12 +72,10 @@
 - (void)viewDidUnload
 {
     [self setImageButton:nil];
-    [self setFirstTextField:nil];
-    [self setLastTextField:nil];
-    [self setNickTextField:nil];
     [self setSaveButtonItem:nil];
     [self setCancelButtonItem:nil];
     [self setBudgetTextField:nil];
+    [self setNameTextField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -109,18 +101,24 @@
 -(IBAction) saveButtonItemDidActivate:(id)sender
 {
     if(self.person){
-        self.person.firstname = self.firstTextField.text;
-        self.person.lastname = self.lastTextField.text;
-        self.person.nickname = self.nickTextField.text;
+        self.person.name = self.nameTextField.text;
         self.person.budget = [NSNumber numberWithFloat:[self.budgetTextField.text floatValue] ];
         self.person.image = [imageButton imageForState:UIControlStateNormal];
+        if(!self.person.name || [self.person.name length] == 0){
+            [[[UIAlertView alloc] initWithTitle:@"No Name" message:@"Please give the Person at least a name!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+            return;
+        }
         if([self checkForPerson:self.person])
         {
             [[[[UIAlertView alloc] initWithTitle:@"Person found" message:@"A Person with this name already exists" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil] autorelease] show];
             return;
         }
     } else {
-        Person *p = [[Person alloc] initWithFirstname:self.firstTextField.text lastname:self.lastTextField.text nickname:self.nickTextField.text budget: [NSNumber numberWithFloat:[self.budgetTextField.text floatValue] ] image:[imageButton imageForState:UIControlStateNormal]];
+        if(!self.nameTextField.text || [self.nameTextField.text length] == 0){
+            [[[UIAlertView alloc] initWithTitle:@"No Name" message:@"Please give the Person at least a name!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+            return;
+        }
+        Person *p = [[Person alloc] initWithName:self.nameTextField.text  budget: [NSNumber numberWithFloat:[self.budgetTextField.text floatValue] ] image:[imageButton imageForState:UIControlStateNormal]];
         if([[((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) persons] containsObject:p]){
             [[[[UIAlertView alloc] initWithTitle:@"Person Ident found" message:@"This should not happen! Please report this!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil] autorelease] show];
             return;
@@ -200,7 +198,5 @@
     [[picker parentViewController] dismissModalViewControllerAnimated:YES];
     [picker release];
 }
-
-#pragma mark - UIAlertViewDelegate
 
 @end

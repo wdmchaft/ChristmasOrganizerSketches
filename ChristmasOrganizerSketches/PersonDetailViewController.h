@@ -14,11 +14,9 @@
 @interface PersonDetailViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate>  {
     
     UIButton *imageButton;
-    UITextField *firstTextField;
-    UITextField *lastTextField;
-    UITextField *nickTextField;
     UIBarButtonItem *cancelButtonItem;
     UIBarButtonItem *saveButtonItem;
+    UITextField *nameTextField;
     UITextField *budgetTextField;
 }
 -(id)initWithPersonOrNil: (Person *) person nibNameOrNil: (NSString *)nibNameOrNil bundleOrNil:(NSBundle *)nibBundleOrNil;
@@ -32,11 +30,9 @@
 
 @property (nonatomic, retain) IBOutlet UITextField *budgetTextField;
 @property (nonatomic, retain) IBOutlet UIButton *imageButton;
-@property (nonatomic, retain) IBOutlet UITextField *firstTextField;
-@property (nonatomic, retain) IBOutlet UITextField *lastTextField;
-@property (nonatomic, retain) IBOutlet UITextField *nickTextField;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButtonItem;
 @property (nonatomic, retain) Person *person;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *saveButtonItem;
+@property (nonatomic, retain) IBOutlet UITextField *nameTextField;
 
 @end
