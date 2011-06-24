@@ -120,7 +120,7 @@
     
     NSString* price = nil;
     if([[_gifts objectAtIndex:indexPath.row] price] && [[_gifts objectAtIndex:indexPath.row] price] > 0){
-        price = [NSString stringWithFormat:@"%@ €",[[[_gifts objectAtIndex:indexPath.row] price] stringValue]];
+        price = [NSString stringWithFormat:@"%g €",[[[_gifts objectAtIndex:indexPath.row] price] floatValue ]];
     }
     [(UILabel *)[ cell viewWithTag:2] setText:price];
     

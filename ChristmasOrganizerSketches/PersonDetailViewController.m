@@ -95,6 +95,16 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(BOOL) checkForPerson: (Person*) p
+{
+    for(Person* person in [((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) persons]){
+        if([p isEqualToOtherPerson:person]){
+            return YES;
+        }
+    }
+    return NO;
+}
+
 
 -(IBAction) saveButtonItemDidActivate:(id)sender
 {
@@ -104,9 +114,23 @@
         self.person.nickname = self.nickTextField.text;
         self.person.budget = [NSNumber numberWithFloat:[self.budgetTextField.text floatValue] ];
         self.person.image = [imageButton imageForState:UIControlStateNormal];
+        if([self checkForPerson:self.person])
+        {
+            [[[[UIAlertView alloc] initWithTitle:@"Person found" message:@"A Person with this name already exists" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil] autorelease] show];
+            return;
+        }
     } else {
         Person *p = [[Person alloc] initWithFirstname:self.firstTextField.text lastname:self.lastTextField.text nickname:self.nickTextField.text budget: [NSNumber numberWithFloat:[self.budgetTextField.text floatValue] ] image:[imageButton imageForState:UIControlStateNormal]];
-        [[((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) persons] addObject:p];
+        if([[((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) persons] containsObject:p]){
+            [[[[UIAlertView alloc] initWithTitle:@"Person Ident found" message:@"This should not happen! Please report this!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil] autorelease] show];
+            return;
+        }
+        if([self checkForPerson:p]){
+                [[[[UIAlertView alloc] initWithTitle:@"Person found" message:@"A Person with this name already exists" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil] autorelease] show];
+                return;
+        }
+        
+        [((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) addPerson:p];
         [p release];
     }
     [((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) reloadPeopleTableViewController];
@@ -177,5 +201,6 @@
     [picker release];
 }
 
+#pragma mark - UIAlertViewDelegate
 
 @end

@@ -13,12 +13,17 @@
     
 }
 
+-(id)initWithIdent: (NSNumber*) ident Name: (NSString* ) name place: (NSString*) place price: (NSNumber* ) price person: (NSString*) person bought:(BOOL) bought image: (UIImage*) image;
+
 -(id)initWithName: (NSString* ) name place: (NSString*) place price: (NSNumber* ) price person: (NSString*) person bought:(BOOL) bought image: (UIImage*) image;
 
 -(id)initWithDictionary:(NSDictionary *)dict;
 
 -(NSDictionary*) toDictionary;
 
+-(BOOL) isEqualToOtherGift:(Gift*) g;
+
+@property (nonatomic, copy) NSNumber* ident;
 @property (nonatomic,copy) NSString* name;
 @property (nonatomic,copy) NSString* place;
 @property (nonatomic,copy) NSNumber* price;

@@ -126,7 +126,7 @@
     
     NSString* budget = nil;
     if([[_persons objectAtIndex:indexPath.row] budget] && [[_persons objectAtIndex:indexPath.row] budget] > 0){
-        budget = [NSString stringWithFormat:@"%@ €",[[[_persons objectAtIndex:indexPath.row] budget] stringValue]];
+        budget = [NSString stringWithFormat:@"%g €",[[[_persons objectAtIndex:indexPath.row] budget] floatValue]];
     }
     [(UILabel *)[ cell viewWithTag:2] setText:budget];
     

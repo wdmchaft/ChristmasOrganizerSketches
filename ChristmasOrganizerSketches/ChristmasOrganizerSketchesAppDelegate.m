@@ -18,6 +18,8 @@
 @synthesize window=_window;
 @synthesize gifts = _gifts;
 @synthesize persons = _persons;
+@synthesize nextGiftIdent = _nextGiftIdent;
+@synthesize nextPersonIdent = _nextPersonIdent;
 
 @synthesize tabBarController=_tabBarController;
 
@@ -51,13 +53,20 @@
     if([fileManager fileExistsAtPath:path]){
         NSArray *data = [NSArray arrayWithContentsOfFile:path];
         for (NSDictionary *dict in data) {
-            [self.gifts addObject:[[Gift alloc] initWithDictionary:dict]];
+            Gift* g = [[Gift alloc] initWithDictionary:dict];
+            if(g.ident >= self.nextGiftIdent)
+            {
+                self.nextGiftIdent = [NSNumber numberWithInt: [g.ident intValue] + 1];
+            }
+            [self.gifts addObject:g];
+            [g release];
         }
     }
     else {
-        Gift *gift = [[Gift alloc] initWithName:@"iPod" place:@"Saturn" price:[NSNumber numberWithInt: 200] person:@"" bought:NO image:nil];
+        Gift *gift = [[Gift alloc] initWithIdent: [NSNumber numberWithInt:1] Name:@"iPod" place:@"Saturn" price:[NSNumber numberWithInt: 200] person:@"" bought:NO image:nil];
         [_gifts addObject:gift];
         [gift release];
+        self.nextGiftIdent = [NSNumber numberWithInt:2];
     }
 }
 
@@ -73,13 +82,20 @@
     if([fileManager fileExistsAtPath:path]){
         NSArray *data = [NSArray arrayWithContentsOfFile:path];
         for (NSDictionary *dict in data) {
-            [self.persons addObject:[[Person alloc] initWithDictionary:dict]];
+            Person* p = [[Person alloc] initWithDictionary:dict];
+            if(p.ident >= self.nextPersonIdent)
+            {
+                self.nextPersonIdent = [NSNumber numberWithInt: [p.ident intValue] + 1];
+            }
+            [self.persons addObject:p];
+            [p release];
         }
     }
     else {
-        Person *p = [[Person alloc] initWithFirstname:@"Toni" lastname:@"Tester" nickname:@"TT" budget:[NSNumber numberWithInt:150] image:nil];
+        Person *p = [[Person alloc] initWithIdent: [NSNumber numberWithInt:1] Firstname:@"Toni" lastname:@"Tester" nickname:@"TT" budget:[NSNumber numberWithInt:150] image:nil];
         [_persons addObject:p];
         [p release];
+        self.nextPersonIdent = [NSNumber numberWithInt:2];
     } 
 }
 
@@ -134,6 +150,26 @@
 {
     NSLog(@"reloadPeopleTableViewController");
     [_peopleTableViewController reload ];
+}
+
+#pragma mark - Adding things
+
+-(void) addGift:(Gift *)gift
+{
+    if(!gift.ident){
+        gift.ident = self.nextGiftIdent;
+        self.nextGiftIdent = [NSNumber numberWithInt:([self.nextGiftIdent intValue] + 1)];
+    }
+    [self.gifts addObject:gift];
+}
+
+-(void) addPerson:(Person *)person
+{
+    if(!person.ident){
+        person.ident = self.nextPersonIdent;
+        self.nextPersonIdent = [NSNumber numberWithInt:([self.nextPersonIdent intValue] + 1)];
+    }
+    [self.persons addObject:person];
 }
 
 #pragma mark - Application Details

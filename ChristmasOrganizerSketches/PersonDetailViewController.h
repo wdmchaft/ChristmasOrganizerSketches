@@ -11,7 +11,7 @@
 #import "ChristmasOrganizerSketchesAppDelegate.h"
 
 
-@interface PersonDetailViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate>  {
+@interface PersonDetailViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate>  {
     
     UIButton *imageButton;
     UITextField *firstTextField;

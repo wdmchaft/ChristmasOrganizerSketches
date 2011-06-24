@@ -31,6 +31,12 @@
 -(void) reloadGiftsTableViewController;
 -(void) reloadPeopleTableViewController;
 
+-(NSMutableArray*) getGiftsForPerson: (Person*) person;
+-(float) getGiftPricesForPerson: (Person*) person;
+
+-(void) addGift: (Gift*) gift;
+-(void) addPerson: (Person*) person;
+
 @property (nonatomic, retain) IBOutlet GiftsTableViewController *giftsTableViewController;
 @property (nonatomic, retain) IBOutlet PeopleTableViewController *peopleTableViewController;
 @property (nonatomic, retain) IBOutlet UINavigationController *giftsNavigationController;
@@ -38,5 +44,7 @@
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 @property (nonatomic, retain) NSMutableArray *gifts;
 @property (nonatomic, retain) NSMutableArray *persons;
+@property (nonatomic, copy) NSNumber *nextGiftIdent;
+@property (nonatomic, copy) NSNumber *nextPersonIdent;
 
 @end

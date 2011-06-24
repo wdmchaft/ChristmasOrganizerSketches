@@ -11,6 +11,7 @@
 
 @implementation Gift
 
+@synthesize ident = _ident;
 @synthesize name = _name;
 @synthesize price = _price;
 @synthesize place = _place;
@@ -18,10 +19,25 @@
 @synthesize bought = _bought;
 @synthesize image = _image;
 
+-(id)initWithIdent: (NSNumber*) ident Name:(NSString *)name place:(NSString *)place price:(NSNumber *)price person:(NSString *)person bought:(BOOL) bought image:(UIImage *)image
+{
+    self = [super init];
+    
+    self.ident = ident;
+    self.name = name;
+    self.place = place;
+    self.price = price;
+    self.person = person;
+    self.bought = bought;
+    self.image = image;
+    
+    return self;
+}
 -(id)initWithName:(NSString *)name place:(NSString *)place price:(NSNumber *)price person:(NSString *)person bought:(BOOL) bought image:(UIImage *)image
 {
     self = [super init];
     
+    self.ident = nil;
     self.name = name;
     self.place = place;
     self.price = price;
@@ -36,6 +52,7 @@
 {
     self = [super init];
     
+    self.ident = [dict objectForKey:@"ident"];
     self.name = [dict objectForKey:@"name"];
     self.place = [dict objectForKey:@"place"];
     self.price = [dict objectForKey:@"price"];
@@ -52,7 +69,26 @@
 -(NSDictionary*) toDictionary
 {
     NSData* imageData = UIImageJPEGRepresentation(self.image, 1.0);
-    return [NSDictionary dictionaryWithObjectsAndKeys:self.name ?: @"",@"name",self.place ?:@"",@"place",self.price, @"price",self.person ?: @"", @"person",self.bought? @"true":@"false",@"bought", imageData,@"image", nil];
+    NSLog(@"%@", self.ident);
+    return [NSDictionary dictionaryWithObjectsAndKeys:self.ident, @"ident", self.name ?: @"",@"name",self.place ?:@"",@"place",self.price, @"price",self.person ?: @"", @"person",self.bought? @"true":@"false",@"bought", imageData,@"image", nil];
+}
+
+-(BOOL)isEqual:(id)object
+{
+    if (object == self)
+    {
+        return YES;   
+    }
+    if (!object || ![object isKindOfClass:[self class]])
+    {
+        return NO;
+    }
+    return [self.ident isEqual:[object ident]];
+}
+
+-(BOOL) isEqualToOtherGift:(Gift *)g
+{
+    return [self.name isEqual:g.name] && ![self.ident isEqual:g.ident];
 }
 
 @end

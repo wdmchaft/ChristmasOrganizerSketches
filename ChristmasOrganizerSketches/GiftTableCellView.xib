@@ -110,6 +110,7 @@
 								<string key="NSFrame">{{192, 31}, {97, 29}}</string>
 								<reference key="NSSuperview" ref="179099419"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -126,7 +127,7 @@
 								<nil key="IBUIHighlightedColor"/>
 								<string key="IBUIShadowOffset">{1, 1}</string>
 								<int key="IBUIBaselineAdjustment">1</int>
-								<float key="IBUIMinimumFontSize">20</float>
+								<float key="IBUIMinimumFontSize">17</float>
 							</object>
 							<object class="IBUILabel" id="894561149">
 								<reference key="NSNextResponder" ref="179099419"/>
