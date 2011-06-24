@@ -116,6 +116,7 @@
 
 -(IBAction) saveButtonItemDidActivate:(id)sender
 {
+    Gift* g = nil;
     if(self.gift){
         self.gift.name = self.nameTextField.text;
         self.gift.price = [NSNumber numberWithFloat: [self.priceTextField.text floatValue]];
@@ -123,32 +124,33 @@
         self.gift.person = self.personTextField.text;
         self.gift.bought = [boughtSwitch isOn];
         self.gift.image = [imageButton imageForState:UIControlStateNormal];
-        if(!self.gift.name || [self.gift.name length] == 0){
-            [[[UIAlertView alloc] initWithTitle:@"No Name" message:@"Please give the Gift at least a name!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
-            return;
-        }
-        if([self alreadyExistsGift:self.gift]){
-            [[[UIAlertView alloc] initWithTitle:@"Gift found" message:@"You already have this gift!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
-            return;
-        }
+        g = self.gift;
     } else {
-        Gift *g = [[Gift alloc] initWithName:self.nameTextField.text place:self.placeTextField.text price:[NSNumber numberWithFloat: [self.priceTextField.text floatValue]] person:self.personTextField.text bought:[boughtSwitch isOn] image:[imageButton imageForState:UIControlStateNormal]];
-        if(!g.name || [g.name length] == 0){
-            [[[UIAlertView alloc] initWithTitle:@"No Name" message:@"Please give the Gift at least a name!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
-            return;
-        }
+        g = [[Gift alloc] initWithName:self.nameTextField.text place:self.placeTextField.text price:[NSNumber numberWithFloat: [self.priceTextField.text floatValue]] person:self.personTextField.text bought:[boughtSwitch isOn] image:[imageButton imageForState:UIControlStateNormal]];
         if([[((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) gifts] containsObject:g]){
             [[[UIAlertView alloc] initWithTitle:@"Gift ident found" message:@"This should not happen! Please report it!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
             return;
         }
-        if([self alreadyExistsGift:g]){
-            [[[UIAlertView alloc] initWithTitle:@"Gift found" message:@"You already have this gift!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
-            return;
-        }
-        [((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) addGift:g];
-        [g release];
     }
+    if(!g.name || [g.name length] == 0){
+        [[[UIAlertView alloc] initWithTitle:@"No Name" message:@"Please give the Gift at least a name!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+        return;
+    }
+    if([self alreadyExistsGift:g]){
+        [[[UIAlertView alloc] initWithTitle:@"Gift found" message:@"You already have this gift!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+        return;
+    }
+    if(!self.gift){
+        [((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) addGift:g];
+    }
+    if(![((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) personWithNameExists:g.person]){
+        [((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) addPerson: [[Person alloc] initWithName:g.person budget:[NSNumber numberWithInt:0] image:nil] ];
+    }
+    
+    [g release];
+    
     [((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) reloadGiftsTableViewController];
+    [((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) reloadPeopleTableViewController];
     
     [self.navigationController popViewControllerAnimated:YES];
 }

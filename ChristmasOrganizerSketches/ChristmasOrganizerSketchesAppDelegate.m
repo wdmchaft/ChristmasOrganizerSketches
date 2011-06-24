@@ -178,8 +178,21 @@
 {
     NSMutableArray* result = [NSMutableArray array];
     for(Gift* g in self.gifts){
-        
+        if([person.name isEqualToString:g.person]){
+            [result addObject:g];
+        }
     }
+    return result;
+}
+
+-(BOOL) personWithNameExists:(NSString*) name
+{
+    for(Person* p in _persons){
+        if([p.name isEqualToString:name]){
+            return YES;
+        }
+    }
+    return NO;
 }
 
 #pragma mark - Application Details

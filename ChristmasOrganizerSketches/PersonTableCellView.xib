@@ -12,6 +12,7 @@
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<string>IBUIProgressView</string>
 			<string>IBUITableViewCell</string>
 			<string>IBUIImageView</string>
 			<string>IBUILabel</string>
@@ -51,7 +52,7 @@
 							<object class="IBUILabel" id="623630385">
 								<reference key="NSNextResponder" ref="1019402156"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{51, 35}, {226, 21}}</string>
+								<string key="NSFrame">{{196, 32}, {104, 21}}</string>
 								<reference key="NSSuperview" ref="1019402156"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
@@ -82,7 +83,7 @@
 								<string key="NSFrame">{{51, 6}, {226, 29}}</string>
 								<reference key="NSSuperview" ref="1019402156"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="623630385"/>
+								<reference key="NSNextKeyView" ref="615018532"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -118,6 +119,18 @@
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">smile.png</string>
 								</object>
+							</object>
+							<object class="IBUIProgressView" id="615018532">
+								<reference key="NSNextResponder" ref="1019402156"/>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{51, 38}, {137, 11}}</string>
+								<reference key="NSSuperview" ref="1019402156"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="623630385"/>
+								<bool key="IBUIOpaque">NO</bool>
+								<int key="IBUITag">6</int>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<int key="IBUIProgressViewStyle">1</int>
 							</object>
 						</object>
 						<string key="NSFrameSize">{320, 68}</string>
@@ -187,8 +200,9 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="652317408"/>
-							<reference ref="623630385"/>
 							<reference ref="398528222"/>
+							<reference ref="615018532"/>
+							<reference ref="623630385"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -207,6 +221,11 @@
 						<reference key="object" ref="398528222"/>
 						<reference key="parent" ref="446107117"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">10</int>
+						<reference key="object" ref="615018532"/>
+						<reference key="parent" ref="446107117"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -215,6 +234,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>-1.CustomClassName</string>
 					<string>-2.CustomClassName</string>
+					<string>10.IBPluginDependency</string>
 					<string>3.IBPluginDependency</string>
 					<string>4.IBPluginDependency</string>
 					<string>5.IBPluginDependency</string>
@@ -224,6 +244,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>PeopleTableViewController</string>
 					<string>UIResponder</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -242,7 +263,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">9</int>
+			<int key="maxID">10</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

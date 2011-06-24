@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Gift.h"
+#import "Person.h"
 #import "ChristmasOrganizerSketchesAppDelegate.h"
 
 

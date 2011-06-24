@@ -121,11 +121,28 @@
     NSString* name = [[_persons objectAtIndex:indexPath.row] name];
     [(UILabel *)[ cell viewWithTag:1] setText:name];
     
-    NSString* budget = nil;
-    if([[_persons objectAtIndex:indexPath.row] budget] && [[_persons objectAtIndex:indexPath.row] budget] > 0){
-        budget = [NSString stringWithFormat:@"%g €",[[[_persons objectAtIndex:indexPath.row] budget] floatValue]];
+    NSMutableArray* giftArray = [((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) getGiftsForPerson:[_persons objectAtIndex:indexPath.row]];
+    
+    float money = 0;
+    for(Gift* g in giftArray){
+        money += [g.price floatValue];
     }
-    [(UILabel *)[ cell viewWithTag:2] setText:budget];
+    
+    NSNumber* budget = [[_persons objectAtIndex:indexPath.row] budget];
+    NSString* budgetText = nil;
+    budgetText = [NSString stringWithFormat:@"%g / %g €",money, [budget floatValue]];
+    float progress = 0;
+    if(money != 0 && budget != 0)
+    {
+        progress = money / [budget floatValue] ;
+    }
+    if([budget floatValue] > 1 && money > [budget floatValue]){
+        [(UILabel *)[ cell viewWithTag:2] setTextColor:[UIColor redColor]];
+//        [(UIProgressView *) [cell viewWithTag:6] ];
+    }
+    [(UIProgressView *) [cell viewWithTag:6] setProgress:progress];
+    
+    [(UILabel *)[ cell viewWithTag:2] setText:budgetText];
     
     if([[_persons objectAtIndex:indexPath.row] image]){
         [(UIImageView *)[ cell viewWithTag:5] setImage:[[_persons objectAtIndex:indexPath.row] image]];
