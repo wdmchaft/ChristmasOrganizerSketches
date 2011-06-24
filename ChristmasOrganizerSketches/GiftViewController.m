@@ -69,7 +69,7 @@
     if(self.gift)
     {
         self.nameTextField.text = self.gift.name;
-        self.priceTextField.text = [self.gift.price stringValue];
+        self.priceTextField.text = [NSString stringWithFormat: @"%g",[self.gift.price floatValue]];
         self.placeTextField.text = self.gift.place;
         self.personTextField.text = self.gift.person;
         [self.boughtSwitch setOn:self.gift.bought];
@@ -105,13 +105,13 @@
 {
     if(self.gift){
         self.gift.name = self.nameTextField.text;
-        self.gift.price = [NSNumber numberWithInteger: [self.priceTextField.text integerValue]];
+        self.gift.price = [NSNumber numberWithFloat: [self.priceTextField.text floatValue]];
         self.gift.place = self.placeTextField.text;
         self.gift.person = self.personTextField.text;
         self.gift.bought = [boughtSwitch isOn];
         self.gift.image = [imageButton imageForState:UIControlStateNormal];
     } else {
-        Gift *g = [[Gift alloc] initWithName:self.nameTextField.text place:self.placeTextField.text price:[NSNumber numberWithInteger: [self.priceTextField.text integerValue]] person:self.personTextField.text bought:[boughtSwitch isOn] image:[imageButton imageForState:UIControlStateNormal]];
+        Gift *g = [[Gift alloc] initWithName:self.nameTextField.text place:self.placeTextField.text price:[NSNumber numberWithFloat: [self.priceTextField.text floatValue]] person:self.personTextField.text bought:[boughtSwitch isOn] image:[imageButton imageForState:UIControlStateNormal]];
         [[((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) gifts] addObject:g];
         [g release];
     }

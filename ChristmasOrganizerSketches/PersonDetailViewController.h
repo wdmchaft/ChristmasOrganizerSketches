@@ -17,9 +17,9 @@
     UITextField *firstTextField;
     UITextField *lastTextField;
     UITextField *nickTextField;
-    UISlider *budgetSlider;
     UIBarButtonItem *cancelButtonItem;
     UIBarButtonItem *saveButtonItem;
+    UITextField *budgetTextField;
 }
 -(id)initWithPersonOrNil: (Person *) person nibNameOrNil: (NSString *)nibNameOrNil bundleOrNil:(NSBundle *)nibBundleOrNil;
 
@@ -30,11 +30,11 @@
                                usingDelegate: (id <UIImagePickerControllerDelegate,
                                                UINavigationControllerDelegate>) delegate;
 
+@property (nonatomic, retain) IBOutlet UITextField *budgetTextField;
 @property (nonatomic, retain) IBOutlet UIButton *imageButton;
 @property (nonatomic, retain) IBOutlet UITextField *firstTextField;
 @property (nonatomic, retain) IBOutlet UITextField *lastTextField;
 @property (nonatomic, retain) IBOutlet UITextField *nickTextField;
-@property (nonatomic, retain) IBOutlet UISlider *budgetSlider;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButtonItem;
 @property (nonatomic, retain) Person *person;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *saveButtonItem;

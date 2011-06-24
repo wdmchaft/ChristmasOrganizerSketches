@@ -10,11 +10,11 @@
 
 
 @implementation PersonDetailViewController
+@synthesize budgetTextField;
 @synthesize imageButton;
 @synthesize firstTextField;
 @synthesize lastTextField;
 @synthesize nickTextField;
-@synthesize budgetSlider;
 @synthesize cancelButtonItem;
 @synthesize person = _person;
 @synthesize saveButtonItem;
@@ -42,9 +42,9 @@
     [firstTextField release];
     [lastTextField release];
     [nickTextField release];
-    [budgetSlider release];
     [saveButtonItem release];
     [cancelButtonItem release];
+    [budgetTextField release];
     [super dealloc];
 }
 
@@ -67,7 +67,7 @@
         self.firstTextField.text = self.person.firstname;
         self.lastTextField.text = self.person.lastname;
         self.nickTextField.text = self.person.nickname;
-        self.budgetSlider.value = [self.person.budget floatValue];
+        self.budgetTextField.text = [NSString stringWithFormat: @"%g" ,[self.person.budget floatValue]];
         [self.imageButton setImage:self.person.image forState:UIControlStateNormal];
     }
     
@@ -81,9 +81,9 @@
     [self setFirstTextField:nil];
     [self setLastTextField:nil];
     [self setNickTextField:nil];
-    [self setBudgetSlider:nil];
     [self setSaveButtonItem:nil];
     [self setCancelButtonItem:nil];
+    [self setBudgetTextField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -102,10 +102,10 @@
         self.person.firstname = self.firstTextField.text;
         self.person.lastname = self.lastTextField.text;
         self.person.nickname = self.nickTextField.text;
-        self.person.budget = [NSNumber numberWithFloat:self.budgetSlider.value ];
+        self.person.budget = [NSNumber numberWithFloat:[self.budgetTextField.text floatValue] ];
         self.person.image = [imageButton imageForState:UIControlStateNormal];
     } else {
-        Person *p = [[Person alloc] initWithFirstname:self.firstTextField.text lastname:self.lastTextField.text nickname:self.nickTextField.text budget: [NSNumber numberWithFloat:self.budgetSlider.value ] image:[imageButton imageForState:UIControlStateNormal]];
+        Person *p = [[Person alloc] initWithFirstname:self.firstTextField.text lastname:self.lastTextField.text nickname:self.nickTextField.text budget: [NSNumber numberWithFloat:[self.budgetTextField.text floatValue] ] image:[imageButton imageForState:UIControlStateNormal]];
         [[((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) persons] addObject:p];
         [p release];
     }
