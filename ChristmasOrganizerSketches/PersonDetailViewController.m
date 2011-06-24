@@ -132,6 +132,7 @@
         [p release];
     }
     [((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) reloadPeopleTableViewController];
+    [((ChristmasOrganizerSketchesAppDelegate *) [[UIApplication sharedApplication] delegate]) save];
     
     [self.navigationController popViewControllerAnimated:YES];
 }
