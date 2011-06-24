@@ -61,7 +61,7 @@
 		F42CBD7413AA49ED00C646AA /* MoreTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreTableViewController.xib; sourceTree = "<group>"; };
 		F42CBD7813AA6F3B00C646AA /* Gift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gift.h; sourceTree = "<group>"; };
 		F42CBD7913AA6F3B00C646AA /* Gift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gift.m; sourceTree = "<group>"; };
-		F45BDEFA13A8EB930011F57D /* ChristmasOrganizerSketches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChristmasOrganizerSketches.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F45BDEFA13A8EB930011F57D /* ChristmasOrganizerSketches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = ChristmasOrganizerSketches.app; path = "/Users/simon/Documents/XcodeProjects/test/ChristmasOrganizerSketches/build/Release-iphoneos/ChristmasOrganizerSketches.app"; sourceTree = "<absolute>"; };
 		F45BDEFE13A8EB930011F57D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F45BDF0013A8EB930011F57D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F45BDF0213A8EB930011F57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -76,8 +76,6 @@
 		F4E8A32813ACAF8A0047BFA2 /* 24-gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "24-gift.png"; sourceTree = "<group>"; };
 		F4E8A32A13ACAFC30047BFA2 /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
 		F4E8A32C13ACB3FC0047BFA2 /* person_with_gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person_with_gift.png; sourceTree = "<group>"; };
-		F4E8A32E13AF6B9D0047BFA2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = /Users/simon/Documents/XcodeProjects/test/ChristmasOrganizerSketches/ChristmasOrganizerSketches/de.lproj/InfoPlist.strings; sourceTree = "<absolute>"; };
-		F4E8A32F13AF6B9D0047BFA2 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = /Users/simon/Documents/XcodeProjects/test/ChristmasOrganizerSketches/ChristmasOrganizerSketches/de.lproj/MainWindow.xib; sourceTree = "<absolute>"; };
 		F4E8A33013AF6D5A0047BFA2 /* gift_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gift_red.png; sourceTree = "<group>"; };
 		F4E8A33213AF811B0047BFA2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F4E8A33313AF811B0047BFA2 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 		F45BDEFB13A8EB930011F57D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F45BDEFA13A8EB930011F57D /* ChristmasOrganizerSketches.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,7 +287,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				F45BDF0813A8EB930011F57D /* en */,
-				F4E8A32E13AF6B9D0047BFA2 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -299,7 +295,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				F45BDF1113A8EB930011F57D /* en */,
-				F4E8A32F13AF6B9D0047BFA2 /* de */,
 			);
 			name = MainWindow.xib;
 			sourceTree = "<group>";
